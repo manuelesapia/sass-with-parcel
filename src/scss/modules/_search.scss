@@ -1,0 +1,37 @@
+.search {
+  padding: 1rem 3rem;
+  display: inline-block;
+  border-radius: 50px;
+  text-decoration: none !important;
+  margin: 1rem;
+  color: $tertiary-grey-darkest;
+  border: solid 1px $tertiary-grey-dark;
+  font-weight: 500;
+  background-color: $tertiary-grey-lightest;
+  @include transition(.3s ease);
+
+  &:hover {
+    background-color: $tertiary-grey-light;
+    border: solid 1px $tertiary-grey-dark;
+    outline: 0;
+  }
+
+  &:focus,
+  &:active {
+    background-color: $primary-white;
+    border: solid 1px $primary-cyan;
+    outline: 0;
+  }
+}
+
+.form-input {
+  padding: 1rem;
+  border: none;
+  margin: 0 1rem;
+
+  &.search-input {
+    //margin-right: 2rem;
+    width: 100%;
+    max-width: 400px;
+  }
+}

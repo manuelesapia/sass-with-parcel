@@ -1,0 +1,131 @@
+.header-banner {
+  padding: 0;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  height: 190px;
+  h1 {
+    padding: 0;
+    margin: 2rem auto 0;
+    max-width: 1200px;
+    display: block;
+  }
+  &.header-banner__cyan {
+    background-color: $primary-cyan;
+    h1 {
+      color: $primary-white;
+    }
+  }
+  &.header-banner__cyan {
+    background-color: $primary-cyan;
+
+    h1 {
+      color: $primary-white;
+    }
+  }
+  &.header-banner__grey {
+    background-color: $primary-grey;
+
+    h1 {
+      color: $primary-white;
+    }
+  }
+
+  &.header-banner__white {
+    border-top: solid 1px $tertiary-grey-light;
+    border-bottom: solid 1px $tertiary-grey-light;
+    background-color: $primary-white;
+    h1 {
+      color: $primary-blue;
+    }
+  }
+
+  .circular-lines {
+    display: block;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -125px;
+
+    &.cyan {
+      background: url("assets/img/banner/large-lines/lines1.svg") 0 0 no-repeat;
+      background-size: contain;
+      background-color: #fff;
+    }
+    &.white {
+      background: url("assets/img/banner/large-lines/lines1.svg") 0 0 no-repeat;
+      background-size: contain;
+      left: 0;
+    }
+  }
+}
+
+.banner-landing {
+  margin: 2rem auto 0;
+}
+
+.banner-article {
+  margin: 2rem auto 5rem;
+  max-width: 1200px;
+  display: flex;
+
+  &.cyan {
+    background-color: $primary-cyan;
+  }
+
+  &.white {
+    background-color: $primary-white;
+    border-top: solid 1px $tertiary-grey-light;
+    border-bottom: solid 1px $tertiary-grey-light;
+    h2,
+    p {
+      color: $primary-grey;
+    }
+  }
+
+  div {
+    overflow: hidden;
+    width: 50%;
+    img {
+      width: 100%;
+    }
+    h2,
+    p {
+      color: $primary-white;
+    }
+  }
+
+  .banner-article__content {
+    padding: 5rem 5rem 2rem 10rem;
+  }
+
+  .banner-article__image {
+    position: relative;
+
+    .curve {
+      display: block;
+      width: 470px;
+      height: 400px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: url("assets/img/banner/Curve590px.svg") 0 0 no-repeat;
+      background-size: contain;
+      z-index: 1;
+    }
+    .circular-lines {
+      display: block;
+      width: 470px;
+      height: 400px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: url("assets/img/banner/large-lines/Dynamic lines 01 cropped.svg")
+        0 0 no-repeat;
+      background-size: contain;
+      z-index: 2;
+    }
+  }
+}

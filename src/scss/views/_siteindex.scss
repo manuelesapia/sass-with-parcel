@@ -1,0 +1,93 @@
+.site-index-letters {
+  @include flexing();
+  background-color: $primary-blue;
+  padding: 2rem 0 1rem 0;
+  list-style: none;
+  margin: 0 0 5rem 0;
+  li {
+    padding: 0.5rem 1.5rem;
+    border-right: solid 1px $primary-cyan;
+    line-height: 0;
+    margin-bottom: 1rem;
+    width: 3.7%;
+    text-align: center;
+    &:last-child {
+      border: none;
+    }
+    a {
+      @include transition(0.2s ease-in-out);
+      color: $primary-white;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      &:hover {
+         color: $primary-cyan;
+      }
+    }
+
+    &.disabled a {
+      color: $tertiary-grey-dark;
+    }
+  }
+}
+
+.site-index-letter {
+  background-color: $tertiary-grey-lightest;
+  padding: 2rem 5rem;
+  margin: 2rem 0;
+
+  >h2 {
+    color: $primary-cyan;
+    padding: 0;
+    margin: 0;
+
+  }
+
+  dl {
+    @include flexing();
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    dt, dd {
+      width: 50%;
+      margin: 0;
+      word-wrap: break-word;
+    }
+
+    dt {
+      margin: 0 0 1.5rem 0;
+      font-weight: bold;
+    }
+
+    dd {
+      a {
+        @include transition(0.2s ease-in-out);
+        color: $tertiary-grey-darkest;
+        text-decoration: none;
+          &:hover {
+            color: $primary-cyan;
+          }
+      }
+    }
+  }
+}
+
+#top-btn {
+  margin: 2rem 1rem;
+  display: block;
+  text-align: right;
+  .floater {
+    a {
+       @include transition(0.2s ease-in-out);
+          color: $tertiary-grey-darkest;
+          text-decoration: none;
+          &:hover {
+            color: $primary-cyan;
+          }
+    }
+    .icon-Icon_reveal_up {
+      margin-left: 1rem;
+      font-size: 1rem;
+    }
+  }
+
+}

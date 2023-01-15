@@ -1,0 +1,256 @@
+
+.enabled-map{
+  .interactive-diagram{
+    padding-top: 0;
+      @media only screen and (min-width: 1283px) {
+        min-height: 900px;
+      }
+  }
+  .container{
+    padding-left: 0;
+  }
+  .enabled-map-list-mobile{
+    display: none;
+    @media (max-width: 1283px){
+      display: block;
+      margin-bottom: 6rem;
+    }
+   }
+  .interactive-diagram__figure{
+    position: relative;
+    background-position: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    left: 0;
+    transform: translateX(0%);
+    @media only screen and (min-width: 1283px) {
+      min-height: 900px;
+    }
+  }
+
+  .interactive-diagram__points{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 900px;
+    bottom: 0;
+    top: auto;
+    max-width: 1280px;
+    margin: 0 auto;
+    @media (max-width: 992px){
+      display: none;
+    }
+  }
+
+  .interactive-diagram__point{
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    top: 0%;
+    left: 0%;
+    cursor:inherit;
+    a{
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      width: 60px;
+      background-color: transparent;
+      height: 60px;
+      z-index: 1;
+    }
+    a::before{
+      display: none;
+    }
+    a::after{
+      display: none;
+    }
+  }
+
+  .interactive-diagram__point--1 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_01_Layers_Leinster-solar-farms-PPA-highlight.svg) no-repeat 50% 50%;
+    }
+    a{ 
+      top: 64%;
+      left: 32%;
+    }
+  
+  } 
+
+  .interactive-diagram__point--2 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_02_Layers_Glen-dimplex-dsr-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 56%;
+      left: 32%;
+    }
+  }
+
+  .interactive-diagram__point--3 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_03_Layers_Dyce-battery-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 24%;
+      left: 46%;
+      height: 77px;
+      width: 200px;
+    }
+  }
+
+
+  .interactive-diagram__point--4 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_04_Layers_Biomar-Net-Zero-Highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 35%;
+      left: 45%;
+      height: 77px;
+      width: 100px;
+    }
+  }
+
+  .interactive-diagram__point--5 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_05_Layers_Roosecote-battery-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 49%;
+      left: 41%;
+      height: 70px;
+      width: 185px;
+    }
+  }
+
+  .interactive-diagram__point--6 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_06_Layers_Rough-hydrogen-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 56%;
+      left: 63%;
+      height: 88px;
+      width: 110px;
+    } 
+  }
+
+  .interactive-diagram__point--7 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_07_Layers_Brigg-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 59%;
+      left: 56%;
+      height: 75px;
+      width: 57px;
+    } 
+  }
+
+  .interactive-diagram__point--8 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_08_Layers_Whitby-hydrogen-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 59%;
+      left: 49%;
+      height: 68px;
+      width: 80px;
+    }
+  }
+
+  .interactive-diagram__point--9 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_09_Layers_Nest-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 69%;
+      left: 44%;
+      height: 88px;
+      width: 72px;
+    }
+  }
+
+  .interactive-diagram__point--10 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_10_Layers_Wye-valley-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 69%;
+      left: 50%;
+      height: 79px;
+      width: 68px;
+    }
+  }
+
+  .interactive-diagram__point--11 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_11_Layers_Midland-hear-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 69%;
+      left: 56%;
+      height: 70px;
+      width: 70px;
+    }
+  }
+  .interactive-diagram__point--12 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_12_Layers_Devon-heat-pump-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 85%;
+      left: 43%;
+      height: 86px;
+      width: 90px;
+    }
+  }
+  .interactive-diagram__point--13 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_13_Layers_Codford-solar-farm-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 79%;
+      left: 50.5%;
+      height: 62px;
+      width: 67px;
+    }
+  }
+
+  .interactive-diagram__point--14 {
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_14_Layers_St-Modwen-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 77.5%;
+      left: 56%;
+      height: 61px;
+      width: 99px;
+    }
+  }
+  .interactive-diagram__point--15{
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_15_Layers_Vodafone-PPA-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 85%;
+      left: 58%;
+      height: 54px;
+      width: 114px;
+    }
+  }
+
+  .interactive-diagram__point--16{
+    &.active{
+      background: url(/Static/img/enabler-map-new/Centrica_EnablerMap_16_Layers_Windfarm-highlight.svg) no-repeat 50% 50%;
+    }
+    a{
+      top: 34.5%;
+      left: 58%;
+      height: 163px;
+      width: 211px;
+    }
+  }
+
+}

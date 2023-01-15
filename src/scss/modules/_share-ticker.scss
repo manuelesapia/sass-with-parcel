@@ -1,0 +1,127 @@
+.share-ticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1250px) {
+    margin-right: 2%;
+  }
+
+  @media screen and (max-width: 1024px) {
+    //display: none;
+    right: 60px;
+    z-index: 9999;
+    .wrapper {
+      border-right: 1px solid #e0e4e6;
+      width: 80px !important;
+      height: 40px !important;
+      top: 6px !important;
+      .date,
+      .exchange {
+        display: inline-block;
+      }
+      .shareprice {
+        display: block;
+        margin: 0;
+        .percent {
+          display: none;
+        }
+        .price {
+          font-size: 1.2rem;
+          text-align: center;
+          background: none;
+          line-height: 12px;
+          margin-left: 13px;
+        }
+      }
+    }
+
+
+    
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 180px;
+
+    @media screen and (max-width: 1170px) {
+      width: 150px;
+    }
+
+    height: 90px;
+    text-align: center;
+    color: #002744;
+    border-left: 1px solid #e0e4e6;
+  }
+
+  .exchange,
+  .date,
+  .percent {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .exchange {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .date {
+  }
+
+  .shareprice {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
+  .price {
+    color: #00afda;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: right;
+    flex: 1 1 auto;
+    align-self: baseline;
+
+    &.up,
+    &.down {
+      padding-right: 12px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-size: 6px;
+    }
+
+    &.up {
+      background-position: 100% 10%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 42'%3E%3Cpath fill='%2300AFDA' d='M16 0v5h17L0 38l4 4L37 9v17.023L42 26V0z'/%3E%3C/svg%3E");
+    }
+
+    &.down {
+      background-position: 100% 80%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 42'%3E%3Cpath fill='%2300AFDA' d='M42 16h-5v17L4 0 0 4l33 33H15.977L16 42h26z'/%3E%3C/svg%3E");
+    }
+  }
+
+  .percent {
+    padding-left: 7px;
+    flex: 1 1 auto;
+    text-align: left;
+    align-self: baseline;
+  }
+}
+
+.share-ticker + nav > .nav-main {
+  @media screen and (min-width: 1025px) and (max-width: 1170px) {
+    padding-right: 160px !important;
+  }
+
+  @media screen and (min-width: 1171px) {
+    padding-right: 190px !important;
+  }
+}

@@ -1,0 +1,84 @@
+// @font-face {
+//   font-family: "Caveat-Regular";
+//   src: url("./fonts/Caveat-VariableFont_wght.ttf"),
+//     url("./fonts/Caveat-Regular.ttf") format("truetype");
+//   font-weight: 400;
+// }
+
+// @font-face {
+//   font-family: "OpenSans-Light";
+//   src: url("fonts/Opens-Light.eot");
+//   src: url("fonts/OpenSans-Light.eot") format("embedded-opentype"),
+//     url("fonts/OpenSans-Light.woff") format("woff"),
+//     url("fonts/OpenSans-Light.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "OpenSansRegular";
+//   src: url("fonts/OpenSans-Regular.eot");
+//   src: url("fonts/OpenSans-Regular.eot") format("embedded-opentype"),
+//     url("fonts/OpenSans-Regular.woff2") format("woff2"),
+//     url("fonts/OpenSans-Regular.woff") format("woff"),
+//     url("fonts/OpenSans-Regular.ttf") format("truetype"),
+//     url("fonts/OpenSans-Regular.svg#OpenSans-Regular") format("svg");
+// }
+
+// @font-face {
+//   font-family: "OpenSans-SemiBold";
+//   src: url("./fonts/OpenSans-SemiBold.eot");
+//   src: url("./fonts/OpenSans-SemiBold.eot") format("embedded-opentype"),
+//     url("./fonts/OpenSans-SemiBold.woff") format("woff"),
+//     url("./fonts/OpenSans-SemiBold.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "OpenSans-Bold";
+//   src: url("fonts/OpenSans-Bold.eot");
+//   src: url("fonts/OpenSans-Bold.eot") format("embedded-opentype"),
+//     url("fonts/OpenSans-Bold.woff") format("woff"),
+//     url("fonts/OpenSans-Bold.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "OpenSansCondensed-Regular";
+//   src: url("./fonts/OpenSans_Condensed-Regular.eot");
+//   src: url("./fonts/OpenSans_Condensed-Regular.eot") format("embedded-opentype"),
+//     url("./fonts/OpenSans_Condensed-Regular.woff") format("woff"),
+//     url("./fonts/OpenSans_Condensed-Regular.ttf") format("truetype");
+// }
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+p {
+  font-size: 1.8rem;
+}
+
+.bold-weight {
+  font-weight: $font-weight-bold;
+  font-family: "OpenSans-Bold", sans-serif;
+}
+
+.semibold-weight {
+  font-weight: $font-weight-semibold;
+  font-family: "OpenSans-SemiBold", sans-serif;
+}
+
+.regular-weight {
+  font-weight: $font-weight-regular;
+  font-family: "OpenSansRegular", sans-serif;
+}
+
+.light-weight {
+  font-weight: $font-weight-light;
+  font-family: "OpenSans-Light", sans-serif;
+}
+
+.standard-into-text {
+  font-family: "OpenSansRegular", sans-serif;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  font-weight: 600;
+}

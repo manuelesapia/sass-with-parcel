@@ -1,0 +1,269 @@
+.soundcloud-emb {
+  width: 85%;
+  margin: -8rem auto 0;
+  z-index: 3;
+  position: relative;
+      @include mq("phone") {
+        width: 100%;
+        margin: 0;
+      }
+}
+
+.keyline-hr {
+    border-top: 1px solid $tertiary-grey-light;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    display: block;
+    margin: 4rem 0;
+}
+
+
+/* ======================================================================================================
+  Modules : latest podcasts
+====================================================================================================== */
+.latest-podcasts {
+  .heading-h2 {
+    text-align: center;
+    font-family: "OpenSans-Bold", sans-serif;
+  }
+
+  &.left-aligned {
+    margin-bottom: 5rem;
+  }
+}
+
+.latest-podcast__module {
+  @include flexing();
+  margin: 0 auto;
+  max-width: 1000px;
+
+  .story-item.podcast .img-container,
+  .story-item {
+    min-height: 420px;
+  }
+
+  .story-item.podcast h3 {
+        text-align: left;
+        line-height: 3rem;
+        font-size: 2.5rem;
+        top: 70%;
+  }
+}
+
+
+/* ======================================================================================================
+  Search Drop down
+====================================================================================================== */
+  .search-navigation.podcasts {
+    @include transition(0.2s ease-in-out);
+    background-color: $tertiary-grey-lightest;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    //display: block;
+    //border-top: solid 1px #fff;
+    margin: 0;
+    padding: 3rem;
+    position: relative;
+
+    @include mq("tablet") {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+    }
+
+    .search-content {
+      opacity: 0;
+      max-width: 650px;
+      margin: 0 auto;
+      position: relative;
+
+      @include mq("tablet") {
+        opacity: 1;
+        max-width: 60%;
+      }
+
+      @include mq("tablet") {
+        opacity: 1;
+        max-width: 600px;
+      }
+
+      .search-icon-wrapper {
+        background: url(../img/Search.svg) 0 0 no-repeat;
+        text-indent: -9999px;
+        height: 18.33px;
+        width: 18.33px;
+        -webkit-background-size: cover;
+        background-size: cover;
+        position: absolute;
+        left: 2rem;
+        top: 1.3rem;
+
+        @include mq("tablet") {
+          left: 2.5rem;
+          top: 1.3rem;
+        }
+      }
+
+      input:not(.cta--ghost) {
+        color: #aeb6bd;
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding-left: 4rem;
+      }
+
+      input.cta.cta--ghost {
+        background-color: $primary-blue;
+        padding: 1rem 2.5rem;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+      }
+
+      .cta.cta--ghost:hover,
+      .cta.cta--ghost:focus {
+        color: #fff;
+      }
+    }
+
+    &.active {
+      visibility: visible;
+      height: 100%;
+      opacity: 1;
+
+      .search-content {
+        opacity: 1;
+      }
+    }
+  }
+
+  .search-button-close {
+    text-decoration: none;
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+    z-index: 10;
+  }
+
+  .podcast-h3 {
+    span {
+      display: block;
+    }
+  }
+  
+  .story-item.width-67.right-align {
+    margin-right: -1rem;
+  }
+  .story-item.width-67.left-align {
+    margin-left: 0rem;
+    margin-right: -0.1rem;
+  }
+
+  .story-item.width-67 {
+    .podcast-h3 {
+      top: 10px !important;
+      text-align: left !important;
+      font-size: 3.5rem !important;
+      left: 20px;
+      width: 50%;
+      line-height: 5rem;
+    }
+
+  }
+
+
+  .search-navigation.podcasts {
+      .close-x {
+        height: 11px;
+        width: 11px;
+        position: absolute;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        right: 23px;
+        z-index: 10;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .close-x:before,
+      .close-x:after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 2px;
+        background-color: #00afda;
+        -webkit-border-radius: 2px;
+        border-radius: 0px;
+        top: 27px;
+      }
+
+      .close-x:before {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+        left: 0;
+      }
+
+      .close-x:after {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+      //search toggle block
+      .search-button-close {
+        text-decoration: none;
+        position: absolute;
+        top: 2rem;
+        right: 5rem;
+        z-index: 10;
+
+        @include mq("tablet") {
+          display: none;
+        }
+
+        .close-x {
+          opacity: 1;
+          visibility: visible;
+          border: 1px solid $primary-blue;
+          border-radius: 50%;
+          width: 62px;
+          height: 62px;
+
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 3px;
+            background-color: $primary-blue;
+            -webkit-border-radius: 2px;
+            border-radius: 0px;
+            top: 29px;
+            left: -webkit-calc(50% - 6.5px);
+            left: calc(50% - 7.5px);
+          }
+        }
+      }
+  }
+
+  .stories-grid {
+    margin-bottom: 5rem;
+  }
+
+  #myItemList {
+    ul {
+      list-style: none;
+      padding:0;
+      margin:0;
+      li {
+        display: inline-block;
+        margin: 1rem 0.7rem;
+        padding: 0.5rem 2rem 0.5rem 1rem;
+        box-shadow: 0 0px 10px rgba(3, 2, 2, 0.1);
+        border: solid 1px #00afda;
+        color: #002744;
+      }
+    }
+  }

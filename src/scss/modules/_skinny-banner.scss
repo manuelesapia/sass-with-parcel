@@ -1,0 +1,66 @@
+.skinny-banner-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  > div {
+    @include mq("phone") {
+      h2 {
+        font-size: 3rem !important;
+      }
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+  .left-aligned {
+    max-width: 603px;
+    margin: 0 0 0 auto;
+    @include mq("phone") {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+  h2 {
+    font-size: 6rem;
+    line-height: 7rem;
+    margin: 1.5rem 0 0 0;
+    font-family: "OpenSans-Bold", sans-serif;
+    width: 90%;
+
+    @include mq("tablet-wide") {
+      font-size: 4rem;
+      line-height: 4rem;
+      margin-bottom: 3rem;
+    }
+  }
+  .skinny-banner {
+    height: 315px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+
+      object-fit: cover;
+      height: 100%;
+      @media screen and (-ms-high-contrast: none) {
+        height: auto;
+      }
+    }
+
+  }
+
+  &.thin-font {
+    h2 {
+      font-weight: $font-weight-light;
+      font-family: "OpenSans-Light";
+      font-size: 5rem;
+      line-height: 7rem;
+    }
+  }
+}

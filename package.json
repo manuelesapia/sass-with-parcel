@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
+    "dev": "parcel src/index.html --open",
     "build": "parcel build src/index.html"
   },
   "repository": {
@@ -22,5 +22,8 @@
     "@parcel/transformer-sass": "^2.8.2",
     "parcel": "^2.8.2",
     "sass": "^1.57.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

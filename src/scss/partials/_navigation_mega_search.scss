@@ -1,0 +1,98 @@
+.search-navigation.mega-nav {
+  @include transition(0.2s ease-in-out);
+  background-color: $primary-black;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  display: block;
+  margin: 0;
+  padding: 6rem 2rem 2rem 2rem;
+  position: relative;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-7em);
+  z-index: -1;
+  transition: all .3s ease-in-out 0.2s, visibility 0s linear .4s, z-index 0s linear .01s;
+
+  .form-input {
+    padding: 0rem 1rem 2rem 8rem;
+    border: none;
+    margin: 0;
+
+    &.search-input {
+      max-width: 1180px;
+      background: none;
+      color: white;
+      outline: none;
+      border-bottom: 1px solid white;
+      width: 100%;
+      font-size: 3.6rem;
+      display: inline-block;
+    }
+  }
+
+  .search-content {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-7em);
+    z-index: -1;
+    transition: all .3s ease-in-out 0.2s, visibility 0s linear .4s, z-index 0s linear .01s;
+  }
+
+  .btn-search-submit {
+    background: none;
+    height: 2.5rem;
+    width: 5.5rem;
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0);
+    height: 190px;
+
+    .search-content {
+      visibility: visible;
+      opacity: 1;
+      z-index: 1;
+      transform: translateY(0);
+    }
+  }
+
+  input.search-input::-webkit-input-placeholder {
+    color: #fff;
+    font-size: 3.6rem;
+    font-weight: 600;
+  }
+}
+
+.search-content {
+  text-align: center;
+  position: relative;
+
+  p {
+    color: $primary-white;
+    display: inline;
+    margin-right: 2rem;
+  }
+
+  .search-button-close {
+    text-decoration: none;
+    position: absolute;
+    top: 1.5rem;
+    right: -8rem;
+
+    @media screen and (max-width: 1400px) {
+      right: 0;
+    }
+  }
+}

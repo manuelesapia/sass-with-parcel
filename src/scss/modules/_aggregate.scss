@@ -1,0 +1,28 @@
+.agg-a {
+    display: block;
+    .module {
+        border: solid 0.5rem transparent;
+        .module-wrapper {
+            padding: 0.5rem;
+            min-height: unset;
+            border: solid 1px #000;
+        }
+    }
+
+    @include mq('tablet') {
+        display: flex;
+        margin: -0.5rem;
+        .module {
+            border: solid 1rem transparent;
+            .module-wrapper {
+                padding: 1rem;
+                min-height: 310px;
+            }
+        }
+    }
+}
+
+.small-wrapper {
+    max-width: 950px;
+    margin: auto;
+}

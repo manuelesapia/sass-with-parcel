@@ -1,0 +1,111 @@
+.fancybox-slide.fancybox-slide--current.fancybox-slide--image.fancybox-slide--complete
+  .download.fancy {
+  transition: 0.2s ease-in-out;
+  color: #00afda;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+  display: block;
+  line-height: 1;
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  span {
+    font-size: 1.4rem;
+    color: #00afda !important;
+  }
+}
+
+.media-library-tab {
+  .filter-list li {
+    @include mq("phone") {
+      width: 100%;
+    }
+  }
+
+  .services-tab__container::before {
+    display: none;
+  }
+  .services-tab__container .services-tab__tab-item {
+    background-color: $primary-white;
+  }
+}
+
+.services-tab__container .services-tab__list-content {
+  background-color: transparent;
+}
+
+.latest-news__module.media-library {
+  .latest-news__module--item {
+    min-height: 425px;
+  }
+
+  .item {
+    .icon-wrapper {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      width: 5rem;
+      height: 5rem;
+      z-index: 10;
+      //background-color: $primary-blue;
+      span {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .media-library-details {
+    padding: 2rem 2.5rem;
+    border-left: solid 1px #e0e4e6;
+    border-bottom: solid 1px #e0e4e6;
+    border-right: solid 1px #e0e4e6;
+
+    &.img-lib {
+      min-height: 170px;
+    }
+    .download {
+      transition: 0.2s ease-in-out;
+      color: #00afda;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+      font-size: 1.4rem;
+      display: block;
+      line-height: 1;
+      span {
+        font-size: 1.4rem;
+        color: #00afda !important;
+      }
+      &:hover {
+        text-decoration: underline;
+        color: #0c1b57;
+        span {
+          color: #0c1b57 !important;
+        }
+      }
+    }
+
+    h3 {
+      text-align: left;
+      font-size: 2rem;
+      margin: 0;
+    }
+    p {
+      text-align: left;
+      span:not(.icon) {
+        font-family: "OpenSans-Bold", sans-serif;
+        color: $primary-black;
+      }
+    }
+
+    .flex-item {
+      span {
+        font-family: "OpenSans-Bold", sans-serif;
+        color: $tertiary-grey-dark;
+      }
+    }
+  }
+}

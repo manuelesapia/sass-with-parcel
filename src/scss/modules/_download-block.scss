@@ -1,0 +1,47 @@
+.download__file {
+  min-height: 110px;
+  box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 770px;
+  margin: 3rem auto 5.5rem 0;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 2.5rem 2.5rem 2.5rem;
+  &.wide {
+    max-width: unset;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: $primary-light-blue;
+    height: 4px;
+    transition: all linear 0.3s;
+  }
+
+  h5 {
+    margin: 0 0 1rem 0;
+    width: 100%;
+  }
+  .download__size {
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+    color: $tertiary-grey-dark;
+    margin: 0 auto 0 0;
+    display: flex;
+  }
+
+  .download__button {
+    margin: 0 0 0 auto;
+    .icon-triangle {
+      margin-right: 0.3rem;
+      top: 2px;
+      font-size: 1.5rem;
+    }
+  }
+}

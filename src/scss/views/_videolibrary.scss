@@ -1,0 +1,105 @@
+.page-header {
+  border-top: solid 1px $tertiary-grey-light;
+  border-bottom: solid 1px $tertiary-grey-light;
+  padding: 4rem 0;
+  &:first-of-type {
+    border-top: none;
+  }
+}
+
+.ph-inner {
+  @include flexing();
+  > div {
+    overflow: hidden;
+    &.ph-wrapper {
+      > h2 {
+        text-transform: uppercase;
+        color: $primary-light-blue;
+        margin: 0;
+        padding: 0 0 3rem 0;
+        @include mq("tablet-wide") {
+          padding: 0 0 1rem 0;
+        }
+      }
+      > h3 {
+        font-family: "OpenSans-Light", sans-serif;
+        font-size: 6rem;
+        font-weight: 300;
+        width: 90%;
+        line-height: 7.4rem;
+        margin: 0;
+        @include mq("tablet-wide") {
+          font-size: 3rem;
+          line-height: 4.4rem;
+          width: 100%;
+          padding: 0 2rem 0 0;
+        }
+      }
+    }
+
+    &.ph-img {
+      position: relative;
+      display: inline-block;
+      border-bottom: solid 2rem transparent;
+      img {
+        @include transition(0.2s ease-in-out);
+        width: 100%;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.carousel-video-library,
+.carousel-img-library {
+  height: 400px;
+
+  .carousel-cell {
+    width: 33.3%;
+    @include mq("phone") {
+      width: 100%;
+    }
+    a {
+      text-decoration: none;
+    }
+    .img {
+      @include transition(0.2s ease-in-out);
+      border-top: solid 20px transparent;
+      border-bottom: solid 20px transparent;
+      max-height: 250px;
+      overflow: hidden;
+      position: relative;
+      img:not(.play-img-button) {
+        width: 100%;
+        display: block;
+        margin-top: -40px;
+      }
+    }
+    .details {
+      text-align: center;
+      @include mq("tablet-wide") {
+        padding: 1rem;
+      }
+      h3 {
+        font-size: 2.2rem;
+        @include mq("tablet-wide") {
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+    &:hover {
+      .img {
+        border-top: solid 20px $tertiary-pink;
+        border-bottom: solid 20px $tertiary-pink;
+      }
+    }
+  }
+
+  &.orange {
+    .carousel-cell:hover .img {
+      border-top: solid 20px $tertiary-orange;
+      border-bottom: solid 20px $tertiary-orange;
+    }
+  }
+}

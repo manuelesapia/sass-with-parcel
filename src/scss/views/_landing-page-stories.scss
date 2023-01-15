@@ -1,0 +1,243 @@
+.loadMoreCntnr {
+  display: block;
+  margin-bottom: 6rem;
+  text-align: center;
+  margin-top: 6rem;
+  > button {
+    outline: none;
+  }
+}
+
+.loadMoreCntnr.disabled {
+  display: none;
+}
+
+.latest-stories-page.filtered-topics {
+  @include mq("tablet-wide") {
+    padding: 0 3%;
+  }
+  .filter-types ul li {
+    @include mq("phone") {
+      margin: 0 2rem 5rem 2rem;
+    }
+  }
+  .close-x {
+    height: 11px;
+    width: 11px;
+    position: absolute;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    right: 23px;
+    z-index: 10;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .close-x:before,
+  .close-x:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background-color: #00afda;
+    -webkit-border-radius: 2px;
+    border-radius: 0px;
+    top: 27px;
+  }
+  .close-x:before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 0;
+  }
+  .close-x:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .filter-list {
+    width: calc(100% - 95px);
+    flex-wrap: nowrap;
+
+    &.stories {
+      width: 85%;
+    }
+    @include mq("tablet-wide") {
+      flex-wrap: wrap;
+    }
+    @include mq("phone") {
+      width: calc(100% - 75px);
+      padding-left: 1rem;
+    }
+
+    h3 {
+      width: 23%;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 3rem;
+      @include mq("tablet-wide") {
+        width: 10%;
+        padding-top: 2rem;
+        margin-right: 3rem;
+      }
+      @include mq("phone") {
+        width: 100%;
+        min-width: auto;
+        max-width: 100%;
+        justify-content: flex-start;
+      }
+    }
+    li {
+      width: 33.3%;
+      min-width: 299px;
+      max-width: 301px;
+      @include mq("tablet-wide") {
+        width: 50%;
+        min-width: auto;
+        max-width: 100%;
+      }
+
+      @include mq("phone") {
+        width: 100%;
+        min-width: auto;
+        max-width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  //.latest-news__module {
+  .latest-news__module--item {
+    position: relative;
+    @include mq("tablet-wide") {
+      min-width: 50%;
+    }
+  }
+  .latest-news__module--item .item {
+    min-height: 500px;
+    max-height: 501px;
+  }
+
+  .latest-news__module--item .item .details h3 {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin: 0 0 3rem 0;
+    height: 100%;
+    overflow: hidden;
+    max-height: 10.7rem;
+  }
+  //}
+
+  .filter-layout-wrapper {
+    h2 {
+      font-size: 4.2rem;
+      line-height: 6rem;
+      color: #0f2067;
+      font-family: "OpenSans-Bold", sans-serif;
+      @include mq("phone") {
+        font-size: 3.2rem;
+        line-height: 5rem;
+      }
+    }
+    .intro {
+      text-align: center;
+    }
+  }
+
+  .button-group .button {
+    height: 46px;
+    position: relative;
+    padding: 0 3rem;
+    margin: 0 2rem 0 0;
+    min-width: 150px;
+    border: 1px solid #aeb6bd;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    color: $primary-black;
+    font-size: 1.6rem;
+    @include transition(0.2s ease-in-out);
+
+    @include mq("phone") {
+      min-width: 100%;
+      margin: 0 auto 1rem auto;
+    }
+    .checkmark {
+      opacity: 0;
+      visibility: hidden;
+      left: calc(100% - 20px);
+      top: 16px;
+      border: none;
+      &:after {
+        content: "";
+        display: block;
+        width: 3px;
+        height: 10px;
+        border: solid #00afda;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .button:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #00afda;
+    color: #00afda;
+  }
+
+  .button:active,
+  .button.is-checked {
+    background-color: #fff;
+    .checkmark {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .button.is-checked {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #00afda;
+    color: #00afda;
+  }
+
+  .button:active {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #00afda;
+    color: #00afda;
+  }
+
+  .load-more-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 5rem 0 5rem 0;
+    height: 5rem;
+    #load-more {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 1.3rem 3.8rem;
+      background-color: white;
+      outline: none;
+      @include mq("phone") {
+        padding: 1.3rem 0.8rem;
+      }
+
+      &:hover {
+        background-color: $primary-blue;
+        color: #fff;
+      }
+      &:focus {
+        background-color: #fff;
+        color: $primary-blue;
+      }
+    }
+  }
+
+  .hidden {
+    display: none;
+    width: 0px !important;
+    height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+}

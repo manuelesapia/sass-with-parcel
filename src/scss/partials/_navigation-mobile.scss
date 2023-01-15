@@ -1,0 +1,327 @@
+@include mq("tablet-wide") {
+
+  .has-children>a .icon-play_arrow,
+  .icon-Icon_play_small {
+    display: none;
+  }
+
+  .search-mobile-wrapper {
+    display: block !important;
+  }
+
+  .search-mobile {
+    display: block;
+    @include transition(0.2s ease-in-out);
+    background-color: $primary-black;
+    margin: 0;
+    padding: 2rem;
+    position: relative;
+
+    input.search-input::-webkit-input-placeholder {
+      color: #fff;
+      font-size: 2.6rem;
+      font-weight: 600;
+    }
+
+    .search-input {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      position: relative;
+      border: none;
+      padding: 1rem 5rem 1rem 0rem;
+      background: none;
+      color: white;
+      outline: none;
+      border-bottom: 1px solid white;
+      width: 100%;
+      font-size: 2.6rem;
+      display: inline-block;
+    }
+
+    .mobile-search-input {
+      position: absolute;
+      top: -0.2rem;
+      right: 0rem;
+      width: 4rem;
+      height: 6rem;
+      opacity: 0;
+      z-index: 10;
+    }
+
+    span.search--icon {
+      position: absolute;
+      right: 0rem;
+      width: 2rem;
+      top: 1rem;
+      height: 2rem;
+
+    }
+  }
+
+  .logo-main-mobile {
+    background: url("../img/logo.jpg") 0 0 no-repeat;
+    background-size: 80%;
+    text-indent: -9999px;
+    display: block;
+    width: 160px;
+    height: 35px;
+    position: absolute;
+    margin: 1rem 1rem 0 3rem;
+
+    @include mq("tablet-wide") {
+      margin: 1rem 1rem 1rem 2.5rem;
+      z-index: 999;
+    }
+
+    @include mq("phone") {
+      margin: 1rem 1.5rem;
+    }
+  }
+
+  .logo-main {
+    margin: 1rem 2rem;
+  }
+
+  .main-nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background: $primary-white;
+
+    @include mq("tablet-wide") {
+      height: 60px;
+    }
+  }
+
+  .hamburger {
+    display: block;
+    padding: 1.5rem 2rem 1rem 1rem;
+    outline: none;
+    margin: 0 0 0 auto;
+  }
+
+  .navigation-wrapper {
+    width: 100%;
+  }
+
+  .nav-main {
+    @include transition(0.2s ease-in-out);
+    padding: 0;
+    display: none;
+    height: 0;
+    opacity: 0;
+
+    &.is-active {
+      @include transition(0.2s ease-in-out);
+      display: block;
+      height: auto;
+      opacity: 1;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav__item {
+      width: 100%;
+      display: block;
+      padding: 0;
+      background-color: $primary-blue;
+      position: relative;
+
+      &:first-child {
+        background-color: $primary-white;
+      }
+
+      &.end {
+        padding: 1rem 2rem;
+        display: none;
+      }
+
+      &:active,
+      &:hover {
+        .submenu-wrapper {
+          visibility: visible;
+          height: unset;
+        }
+
+        >.nav__link {
+          border: 0;
+          padding: 0;
+          display: block;
+          padding: 2rem;
+
+          background-color: $primary-blue;
+          color: $primary-white;
+        }
+      }
+
+      .nav__link {
+        display: block;
+        padding: 2rem;
+        margin-right: 7rem;
+        background-color: $primary-blue;
+        color: $primary-white;
+        padding-bottom: 2rem !important;
+
+        &.active {
+          .submenu-wrapper {
+            background-color: #00afda !important;
+          }
+        }
+      }
+
+      .nav__subnav-primary {
+        .nav__item {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .submenu-wrapper {
+    visibility: visible;
+    position: relative;
+    opacity: 1;
+    height: auto;
+    display: block;
+    top: 0;
+
+    .submenu-wrapper-inner {
+      padding: 0;
+
+      .right-nav-col {
+        width: 100%;
+      }
+    }
+
+    .left-nav-col,
+    .tout-placeholder {
+      display: none;
+    }
+  }
+
+  .nav__subnav-secondary {
+    background-color: #f4f5f6;
+    width: 100%;
+
+    li {
+      >a {
+        color: #002744 !important;
+        padding: 2rem;
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: #002744 !important;
+        }
+      }
+    }
+  }
+
+  .nav__subnav-tertiary {
+    background-color: #fff;
+    position: relative;
+    opacity: 1;
+    height: auto;
+    min-height: unset;
+    width: calc(100% + 1rem);
+    left: -1rem;
+    padding-left: 2rem;
+
+    li {
+      padding: 0 !important;
+
+      a {
+        color: $primary-white;
+        padding: 2rem 2rem 2rem 3rem;
+      }
+    }
+  }
+
+  .expand-menu-secondary,
+  .expand-menu {
+    @include transition(0.1s ease-in-out);
+    width: 70px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 12px;
+    z-index: 999;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    outline: none;
+
+    @include mq("tablet-wide") {
+      height: 60px;
+      top: 0;
+    }
+  }
+
+  //used for turning active states on and off
+  ul.menu li {
+    display: none;
+
+    .expand-menu-secondary span,
+    .expand-menu span {
+      color: #00afda;
+    }
+
+    &.active {
+
+      .nav__subnav-secondary li.has-children,
+      .nav__subnav-secondary li.has-not-children {
+        @include transition(0.1s ease-in-out);
+        display: block;
+        padding: 0 0 0px 1rem;
+        margin: 0;
+        line-height: 2rem;
+      }
+
+      >.expand-menu,
+      .sub-nested.has-children.open-subnav .expand-menu-secondary {
+        @include transition(0.1s ease-in-out);
+        @include transform(rotate(90deg));
+      }
+    }
+
+    .nav__subnav-secondary li {
+      @include transition(0.2s ease-in-out);
+      display: none;
+      position: relative;
+
+      a {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .sub-nested.has-children.open-subnav .nav__subnav-tertiary {
+    display: block;
+    @include transition(0.2s ease-in-out);
+  }
+
+  .sub-nested.has-children.open-subnav .nav__subnav-tertiary li {
+    display: block;
+    height: auto;
+  }
+}
+
+@include mq("tablet-wide") {
+  .main-nav {
+    position: fixed;
+    background: transparent;
+
+    &.is-active {
+      overflow-y: scroll;
+      height: 100%;
+    }
+  }
+
+  .navigation-wrapper {
+    background: #fff;
+  }
+}

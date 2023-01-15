@@ -1,0 +1,153 @@
+@import "./palette.scss";
+
+.sustainability-block-1 {
+  position: relative;
+  z-index: 1;
+  padding: 6rem 0;
+  background-color: #f4f5f6;
+
+  h2 {
+    font-size: 4.2rem;
+    line-height: 6rem;
+    color: $primary-blue;
+    @include mq("phone") {
+      font-size: 3rem;
+      line-height: 5rem;
+    }
+  }
+
+  h3.heading-h3 {
+    font-size: 3rem;
+    line-height: 4.4rem;
+    color: $primary-blue;
+    margin: 0 0 2rem 0;
+    @include mq("phone") {
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+    }
+  }
+
+  .panels-three-wrapper {
+    @include flexing();
+    margin: -1rem;
+    padding-bottom: 2rem;
+    .panels-three-item {
+      width: 33.3%;
+      border: solid 1rem #f4f5f6;
+      min-height: 720px;
+      background-color: #fff;
+      position: relative;
+      @include mq("tablet-wide") {
+        width: 50%;
+      }
+      @include mq("phone") {
+        min-height: auto;
+      }
+
+      a {
+        text-decoration: none;
+      }
+      @include mq("phone") {
+        width: 100%;
+        //margin: 0 2rem;
+      }
+      .panels-three-item--img {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        @include transition(0.5s ease-in-out);
+        height: 380px;
+        @media screen and (-ms-high-contrast: none) {
+          height: auto;
+        }
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          object-fit: cover;
+          @include transition(0.5s ease-in-out);
+        }
+        &:hover {
+          img {
+            @include transform(scale(1.1));
+          }
+        }
+      }
+
+      .panels-three-item--content {
+        background-color: $primary-white;
+        padding: 3rem 3rem;
+        padding-bottom: 5rem;
+        position: relative;
+        @include mq("phone") {
+          padding-bottom: 10rem;
+        }
+
+        > a {
+          font-size: 1.8rem;
+        }
+      }
+
+      .cta-arrow {
+        position: absolute;
+        bottom: 0;
+        padding: 3rem;
+      }
+    }
+  }
+
+  .sustainability-block--inner {
+    display: flex;
+    flex-direction: column;
+
+    .-innerwrapper {
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+
+      img {
+        transition: 0.5s ease-in-out;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        @media screen and (-ms-high-contrast: none) {
+          height: auto;
+        }
+      }
+    }
+
+    .info {
+      background-color: #fff;
+      display: flex;
+      min-height: 240px;
+
+      @include mq("phone") {
+        flex-wrap: wrap;
+        min-height: auto;
+      }
+    }
+    h2 {
+      margin: 0;
+    }
+
+    .details {
+      width: 100%;
+      padding: 4rem 4rem 4rem 3rem;
+      p {
+        margin: 0;
+        padding-bottom: 2.5rem;
+      }
+
+      > a {
+        font-size: 1.8rem;
+      }
+      @include mq("phone") {
+        padding: 2rem 3rem;
+      }
+    }
+  }
+}

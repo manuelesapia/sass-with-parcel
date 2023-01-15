@@ -1,0 +1,77 @@
+.leadership_team {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: auto;
+  h2 {
+    color: $primary-blue;
+    text-align: center;
+  }
+  .ladeership_team_carousel {
+    min-height: 600px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin: 0 -1rem 0 -1rem;
+    display: flex;
+  }
+  a {
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+  }
+  .width-25 {
+    min-height: 470px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 1rem solid transparent;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border: 1px solid #e0e4e6;
+      z-index: 1;
+    }
+    @media (max-width: 992px) {
+      width: 50%;
+    }
+    @include mq("phone") {
+      width: 100%;
+    }
+  }
+
+  .person_item {
+    position: relative;
+    height: 331px;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      position: absolute;
+      display: block;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      @media screen and (-ms-high-contrast: none) {
+        height: auto;
+      }
+    }
+  }
+
+  .person_description {
+    padding: 2rem;
+    max-height: 140px;
+    min-height: 145px;
+    h3 {
+      margin: 0;
+      color: $primary-blue;
+      font-size: 26px;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+  }
+}

@@ -1,0 +1,463 @@
+@import "./_mixins.scss";
+@import "../partials/_fonts.scss";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primary-blue;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "OpenSansRegular", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0px;
+
+  &.center {
+    text-align: center;
+  }
+
+  &.no-margin {
+    margin: 0;
+  }
+
+  &.primary-blue {
+    color: $primary-blue;
+  }
+
+  &.primary-light-blue {
+    color: $primary-light-blue;
+  }
+
+  &.white {
+    color: $primary-white;
+  }
+}
+
+p {
+  font-weight: $font-weight-light;
+  font-family: "OpenSansRegular", sans-serif;
+  color: $primary-black;
+
+  &.no-margin {
+    margin: 0;
+  }
+}
+
+.heading-h1 {
+  font-size: 6rem;
+  margin-bottom: 3rem;
+  z-index: 1;
+  line-height: 7rem;
+  font-family: "OpenSans-SemiBold", sans-serif;
+
+  &.-bold {
+    font-family: "OpenSans-Bold", sans-serif;
+  }
+
+  @include mq("phone") {
+    font-size: 3.75rem;
+    line-height: 3.5rem;
+    font-weight: 600;
+  }
+}
+
+.heading-h2 {
+  font-size: 3.75rem;
+  z-index: 1;
+  font-family: "OpenSans-Bold", sans-serif;
+
+  &.heading-animation {
+    font-size: 2rem;
+  }
+
+  @include mq("phone") {
+    font-size: 2rem;
+    line-height: 3.5rem;
+  }
+}
+
+.heading-h2-alt {
+  font-size: 6rem;
+  z-index: 1;
+  color: $primary-light-blue;
+  font-family: "OpenSans-Bold", sans-serif;
+
+  @include mq("phone") {
+    font-size: 3rem;
+  }
+
+  @include mq("tablet-wide") {
+    margin: 0;
+    font-size: 4rem;
+  }
+}
+
+.heading-h3 {
+  font-size: 2.5rem;
+  z-index: 1;
+  font-family: "OpenSans-Bold", sans-serif;
+
+  @include mq("phone") {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+h4 {
+  font-size: 1.8rem;
+  line-height: 3.4rem;
+  color: $primary-blue;
+  font-family: "OpenSans-Bold", sans-serif;
+}
+
+.heading-h4 {
+  font-size: 1.8rem;
+  line-height: 36px;
+}
+
+.heading-h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 26px;
+}
+
+a.link_type_2022{
+  font-size: 2rem;
+  line-height: 3.2rem;
+  color:#0F2067;
+  font-family: "OpenSans-Bold", sans-serif;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+  transition: border-color .3s ease;  
+  &:hover{
+    border-color: $primary-light-blue;
+  }
+  &.internal--link::after{
+    content: "";
+    position: relative;
+    padding: 0.3rem 1.2rem;
+    margin-left: 1rem;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.528 5.73431L13.9788 4.32031L21.3172 11.4753L21.312 11.4805L21.8939 12.0478L14.0662 19.6798L12.6159 18.2658L18.0367 12.9805H2.10614V10.9805H17.9079L12.528 5.73431Z' fill='%230F2067'/%3e%3c/svg%3e") no-repeat 50% 50%;
+  }
+  &.download--link::before{
+    content: "";
+    position: relative;
+    padding: 0.3rem 1.2rem;
+    margin-right: 1rem;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M17.6765 11.1998L16.2902 9.9002L13.1834 13.2144V2H11.2834V13.1042L8.19555 9.60507L6.77118 10.8619L12.2121 17.0284L17.6765 11.1998Z' fill='%230F2067'/%3e%3cpath d='M18.5667 15.6167V19.1H5.9V15.6167H4V21H20.4667V15.6167H18.5667Z' fill='%230F2067'/%3e%3c/svg%3e") no-repeat 50% 50%;
+  }
+}
+
+p.intro-small{
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  font-family: "OpenSans-Bold", sans-serif;
+  color: $primary-blue;
+}
+
+
+p.quote {
+  font-size: 2.8rem;
+  line-height: 4.4rem;
+  font-family: "OpenSans-Bold", sans-serif;
+  color: $primary-black;
+
+  @include mq("phone") {
+    font-size: 2rem;
+    line-height: 3.4rem;
+  }
+}
+
+p.caption {
+  display: block;
+  padding: 1rem 3rem;
+  background-color: #0f2067;
+  margin: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+p {
+  font-size: 1.4rem;
+  font-weight: regular;
+  line-height: 3.2rem;
+
+  &.center {
+    text-align: center;
+  }
+}
+
+p.intro {
+  color: $primary-black;
+  font-size: 2.4rem;
+  line-height: 4rem;
+  font-family: "OpenSans-Light";
+}
+
+p.intro-large {
+  color: $primary-black;
+  font-size: 3.2rem;
+  line-height: 5.2rem;
+  font-family: "OpenSans-Light";
+
+  &.center {
+    text-align: center;
+  }
+}
+
+
+a {
+  font-weight: regular;
+}
+
+.details.rich-text-editor {
+  ul li::before {
+    display: none;
+  }
+}
+
+.rich-text-editor {
+  .article-downloads {
+    ul li::before {
+      display: none;
+    }
+  }
+}
+
+.rich-text-editor {
+  &.white {
+    z-index: 1;
+    position: relative;
+
+    p {
+      a {
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: #fff;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    ul li {
+      a {
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: #fff;
+        }
+      }
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    li {
+      color: #fff;
+    }
+  }
+
+  &.centered {
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    a {
+      text-align: center;
+    }
+  }
+
+
+  &.grey {
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    li {
+      color: #5D5D5D;
+    }
+  }
+
+  ol {
+    counter-reset: ol;
+    list-style: none;
+    margin: 0 0 2rem 0;
+    padding-left: 3rem;
+  }
+
+  ol>li {
+    position: relative;
+    color: $primary-black;
+    margin-top: 0 !important;
+    font-size: 1.8rem;
+    padding-left: 1rem;
+    margin: 0 0 1rem 0;
+  }
+
+  ol>li::before {
+    counter-increment: ol;
+    content: counter(ol) ".";
+    color: $primary-light-blue;
+    left: -1.5rem;
+    top: 0;
+    width: 1.5em;
+    display: inline-block;
+    position: absolute;
+  }
+
+  ul {
+    counter-reset: ol;
+    list-style: none;
+    margin: 0 0 2rem 0;
+    padding-left: 2rem;
+
+    &.contact-links {
+      margin-top: 5rem;
+    }
+  }
+
+  ul li {
+    position: relative;
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+    color: $primary-black;
+    margin-top: 0 !important;
+  }
+
+  ul li::before {
+    content: "\2022";
+    color: #00afda;
+    left: -1.5rem;
+    width: 1.5em;
+    font-size: 2rem;
+    display: inline-block;
+    position: absolute;
+  }
+
+  ul li {
+    a {
+      @include transition(0.3s ease);
+      display: inline;
+      text-decoration: none;
+      color: $primary-light-blue;
+      font-weight: $font-weight-regular;
+      font-family: "OpenSansRegular", sans-serif;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $primary-black;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  p {
+    word-wrap: break-word;
+
+    a {
+      @include transition(0.3s ease);
+      display: inline;
+      text-decoration: none;
+      color: $primary-light-blue;
+      font-weight: $font-weight-regular;
+      font-family: "OpenSansRegular", sans-serif;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $primary-black;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.typography {
+  ul {
+    list-style: none;
+    margin: 1rem;
+    padding: 0;
+    border: solid 1px #eee;
+
+    li {
+      margin: 0 0 2rem 0;
+    }
+  }
+}
+
+ul.bullet-point-standard {
+  counter-reset: ol;
+  list-style: none;
+  margin: 0 0 2rem 0;
+  padding-left: 2rem;
+
+  li {
+    position: relative;
+  }
+}
+
+ul.bullet-point-standard>li::before {
+  content: "\2022";
+  color: $primary-light-blue;
+  left: -1.5rem;
+  width: 1.5em;
+  font-size: 2rem;
+  display: inline-block;
+  position: absolute;
+}
+
+.font__weight {
+  padding-left: 3rem;
+  font-size: 3rem;
+}
+
+.overflow {
+  text-overflow: ellipsis;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.overflow::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+  display: none;
+}
+
+.overflow::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.overflow::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 4px transparent;
+  background-color: transparent;
+}
+
+.strong-text {
+  text-transform: uppercase;
+  font-weight: 900;
+}

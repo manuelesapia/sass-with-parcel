@@ -1,0 +1,111 @@
+.services-tab.our-leadership-tab {
+  .services-tab__container {
+    &::before {
+      background-color: #fff;
+    }
+
+    .services-tab__nav {
+      background-color: transparent;
+    }
+
+    .services-tab__tab-item {
+      background-color: #fff;
+    }
+
+    .services-tab__list-content {
+      margin-top: 3rem;
+      background-color: #fff;
+    }
+  }
+}
+
+.hires-introtext {
+  border-top: solid 1px $tertiary-grey-light;
+  margin-top: 1rem !important;
+}
+.latest-news__module.our-leadership {
+  margin-bottom: 5rem;
+  .latest-news__module--item {
+    width: 25%;
+    min-height: 425px;
+
+    .item .img-container img {
+      margin-top: 0;
+    }
+
+    @include mq("tablet-wide") {
+      width: 33.333%;
+    }
+
+    @include mq("phone") {
+      width: 100%;
+    }
+
+    &.latest-news__module--item--third {
+      width: 33.33%;
+      @include mq("phone") {
+        width: 100%;
+      }
+      .item {
+        .img-container {
+          height: 210px;
+          overflow: hidden;
+        }
+        .our-leadership-details {
+          min-height: 200px;
+        }
+      }
+    }
+  }
+
+  a.item {
+    display: block;
+    text-decoration: none;
+    @include box-shadow(2px, 2px, 12px, rgba(238, 238, 238, 1));
+    &.border-noshadow {
+      box-shadow: 0 0 0;
+
+      .our-leadership-details {
+        padding: 2rem 2.5rem;
+        text-align: left;
+        border-bottom: solid 1px $tertiary-grey-light;
+        border-left: solid 1px $tertiary-grey-light;
+        border-right: solid 1px $tertiary-grey-light;
+        min-height: 17.5rem;
+      }
+    }
+
+    .our-leadership-details {
+      padding: 2rem 2.5rem;
+      text-align: left;
+    }
+
+    h3 {
+      font-size: 2.6rem;
+      font-weight: bold;
+      margin: 0;
+      color: #0f2067;
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 1.6rem;
+      color: #5c6d7c;
+    }
+
+    &:hover {
+      .our-leadership-details {
+        background-color: #0f2067;
+        transition: background-color 0.5s;
+      }
+
+      h3 {
+        color: #fff;
+      }
+
+      p {
+        color: #fff;
+      }
+    }
+  }
+}

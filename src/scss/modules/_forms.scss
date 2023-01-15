@@ -1,0 +1,255 @@
+.form-wrapper {
+
+  .heading-h1 {
+    color: #00afda;
+  }
+  .subtext {
+    color: #ddd;
+    font-style: italic;
+  }
+.round {
+  position: relative;
+  float: left;
+}
+.agree-checkbox-txt {
+  font-size: 1.5rem;
+  //margin-left: 4rem;
+  a {
+    color: #00afda;
+    text-decoration: none;
+  }
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked+label {
+  background-color: #00afda;
+  border-color: #00afda;
+}
+
+.round input[type="checkbox"]:checked+label:after {
+  opacity: 1;
+}
+
+
+
+
+    .hide-label {
+      display: none;
+    }
+
+  .required {
+    color: red
+  }
+  .heading-h2 {
+    text-align: left;
+  }
+
+  .agm-form {
+    max-width: 600px;
+    margin-bottom: 2rem;
+    &.submitted-approve {
+      display: none;
+    }
+  }
+
+  fieldset {
+    border: none;
+
+    label {
+      display: block;
+      font-size: 1.8rem;
+      z-index: 1;
+      font-family: "OpenSans-Bold", sans-serif;
+    }
+
+    input, select, textarea {
+      @include transition(0.2s ease-in-out);
+      width: 100%;
+      padding: 1rem;
+      border: solid 1px #eee;
+      &:focus {
+        border: solid 1px #ddd;
+        background-color: #fefefe;
+        outline: none;
+      }
+
+      &.submit-cta {
+        width: auto;
+        padding: 1.5rem 5rem;
+      }
+    }
+
+    textarea {
+      min-height: 200px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0 0 4rem 0;
+    }
+  }
+
+  .hidden {
+    display: none;
+    border: solid 1px red;
+    padding: 0 1rem;
+    margin-top: 1rem;
+    p {
+      color: red;
+    }
+  }
+
+
+
+
+  .submit-response {
+    max-width: 1200px;
+    margin-bottom: 2rem;
+    display: none;
+    &.submitted-approve {
+      display: block;
+    }
+  }
+
+  .agm-options{
+    @include flexing();
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    li {
+    border: solid 1rem transparent;
+    width: 33.333%;
+        
+
+        @include mq("tablet") {
+          width: 50%;
+          min-height: auto;
+          .heading-h3 {
+            font-size: 2rem;
+            margin: 0 0 1rem 0;
+          }
+          .cta-arrow {
+            font-size: 1.6rem;
+          }
+
+          >div {
+             min-height: unset !important;
+            p {
+              margin: 2rem 0  0 0;
+              position: relative !important;
+            }
+          }
+        }
+        @include mq("phone") {
+          width: 100%;
+          min-height: auto;
+        }
+
+
+
+        >div {
+          box-shadow: 2px 2px 12px #eee;
+          padding: 3rem 4rem;
+          position: relative;
+          overflow: hidden;
+          min-height: 220px;
+            .heading-h3 {
+              margin: 0 0 1rem 0;
+            }
+            p {
+              position: absolute;
+              bottom: 2rem;
+            }
+     
+              @include mq("phone") {
+                .cta-arrow {
+                  font-size: 1.6rem;
+                }
+              }
+
+        }
+    }
+  }
+}
+
+.overlay-agm {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(15, 32, 103, 0.6);
+  display: none;
+  &.shown {
+    display: block;
+  }
+}
+
+.overlay__inner {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.overlay__content {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  width: 75px;
+  height: 75px;
+  display: inline-block;
+  border-width: 2px;
+  border-color: rgba(255, 255, 255, 0.05);
+  border-top-color: #fff;
+  animation: spin 1s infinite linear;
+  border-radius: 100%;
+  border-style: solid;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

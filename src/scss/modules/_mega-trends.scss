@@ -1,0 +1,140 @@
+.mega-trends {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  @include mq("tablet-wide") {
+    .overlay h2 {
+      line-height: 4rem;
+      font-size: 2.9rem;
+    }
+  }
+  .mega-trends-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .item-trends {
+    text-align: center;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    min-height: 640px;
+    color: #fff;
+    border: 0.5rem solid white;
+    @include mq("tablet-wide") {
+      width: 50%;
+    }
+    @include mq("phone") {
+      min-height: 450px;
+      width: 100%;
+    }
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  .item-trends:hover {
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .overlay-p {
+      display: block;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    .icon-Icon_reveal_down {
+      display: block;
+    }
+    .icon-Icon_reveal_up {
+      display: none;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: 0.5s ease;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    @media (max-width: 1400px) {
+      padding: 1rem 4rem;
+    }
+  }
+
+  h2 {
+    font-size: 4.4rem;
+    color: #fff;
+    line-height: 5.6rem;
+    text-align: left;
+    margin: 0;
+    position: relative;
+    float: left;
+    margin-bottom: 12rem;
+    font-family: "OpenSansRegular", sans-serif;
+    width: 100%;
+    @include mq("tablet-wide") {
+      font-size: 3.4rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .overlay-p {
+    display: none;
+    color: #fff;
+    position: relative;
+    margin-top: 1rem;
+    text-align: left;
+    float: left;
+    width: 100%;
+    p {
+      font-size: 1.8rem;
+      line-height: 3rem;
+      color: #fff;
+    }
+    a {
+      margin-top: 2rem;
+      float: left;
+      margin-bottom: 2rem;
+    }
+    &:hover a {
+      color: #fff;
+    }
+    @include mq("phone") {
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+    }
+  }
+  .icon-Icon_reveal_down {
+    display: none;
+    transform: rotate(180deg);
+  }
+  .icon-Icon_reveal_up {
+    display: block;
+  }
+  .arrow-up {
+    position: relative;
+    margin: 0 auto;
+    opacity: 1;
+    transition: opacity 0.3s;
+    margin-bottom: 3rem;
+  }
+}

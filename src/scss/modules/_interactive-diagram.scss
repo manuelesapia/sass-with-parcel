@@ -1,0 +1,519 @@
+.interactive-widget {
+    max-width: 1600px;
+    margin: auto;
+    //background-color: #f4f5f6;
+}
+.interactive-diagram {
+  position: relative;
+  padding-top: 50px;
+
+  @media only screen and (min-width: 1283px) {
+    min-height: 800px;
+  }
+
+  // head
+  &__title {
+    font-size: 20px;
+    line-height: 24px;
+    color: #0f2067;
+    padding-bottom: 10px;
+
+    font-size: 3.75rem;
+    line-height: 4.4rem;
+    color: #0f2067;
+    font-family: "OpenSans-Bold", sans-serif;
+  }
+
+  &__desc {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    padding-bottom: 3rem;
+
+    a {
+      color: #00afda;
+      text-decoration: none;
+      &:hover {
+        color: #0f2067;
+        text-decoration: underline;
+      }
+    }
+
+    @media only screen and (min-width: 479px) {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  &__title,
+  &__desc {
+    @media only screen and (min-width: 1283px) {
+      max-width: 30%;
+      margin-left: 20px;
+    }
+  }
+
+  // aside nav
+  &__nav {
+    padding-top: 0px;
+
+    @media only screen and (min-width: 767px) {
+      //padding-top: 20px;
+    }
+
+    @media only screen and (min-width: 1007px) {
+      //padding-top: 35px;
+      //margin-left: 20px;
+    }
+
+    @media only screen and (min-width: 1283px) {
+      paddnig-top: 0px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0 0 0 2rem;
+
+      @media only screen and (min-width: 767px) {
+        column-count: 2;
+      }
+
+      @media only screen and (min-width: 1283px) {
+        column-count: 1;
+      }
+    }
+  }
+
+  &__item {
+    //margin-bottom: 10px;
+    margin-left: 0;
+
+    &.active,
+    &:hover {
+      a {
+        border-bottom-color: #0f2067;
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
+    @media only screen and (min-width: 767px) {
+     // margin-bottom: 20px;
+    }
+
+    @media only screen and (min-width: 1007px) {
+      //margin-bottom: 25px;
+    }
+
+    @media only screen and (min-width: 1283px) {
+      //margin-bottom: 40px;
+    }
+
+    a {
+      color: #0f2067;
+      font-size: 1.6rem;
+      line-height: 24px;
+      font-weight: 500;
+      text-decoration: none;
+      padding-bottom: 1px;
+      transition: 0.25s ease-in;
+      border-bottom: 1px solid transparent;
+
+      @media only screen and (min-width: 767px) {
+       font-size: 1.6rem;
+      }
+
+      @media only screen and (min-width: 1007px) {
+        font-size: 1.6rem;
+      }
+
+      @media only screen and (min-width: 1283px) {
+        font-size: 1.8rem;
+      }
+
+      span {
+        padding-right: 5px;
+      }
+    }
+  }
+
+  // bg and points
+  &__figure {
+    @media only screen and (min-width: 1283px) {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 800px;
+      background-image: url("../../img/fracnow-diagram.jpg");
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      background-size: contain;
+      max-width: 1300px;
+      z-index: -1;
+    }
+
+    &--mobile {
+      max-width: 100%;
+      margin-top: -30px;
+      display: inline-block;
+
+      @media only screen and (min-width: 1283px) {
+        display: none;
+      }
+    }
+  }
+
+  &__figure,
+  &__points {
+    @media only screen and (min-width: 1283px) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__points {
+    display: none;
+
+    @media only screen and (min-width: 1283px) {
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      margin-left: -70px;
+      max-width: 1300px;
+      pointer-events: none;
+    }
+  }
+
+  &__point {
+    margin: 0;
+    cursor: pointer;
+    pointer-events: auto;
+    display: flex;
+
+    &.active,
+    &:hover {
+      a {
+        text-decoration: none;
+        color: #0f2067;
+
+        &::before {
+          opacity: 0.2;
+          transform: scale(1.5);
+        }
+      }
+    }
+
+    a {
+        color: #0f2067;
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-weight: 900;
+      padding: 2px 9px;
+      font-size: 20px;
+      transition: 0.25s ease-in;
+
+      &::after,
+      &::before {
+        position: absolute;
+        content: "";
+        top: -3px;
+        left: -38px;
+        width: 27px;
+        height: 27px;
+        background-color: transparent;
+        border: 3px solid #0f2067;
+        border-radius: 50%;
+      }
+
+      &::before {
+        border-width: 5px;
+        left: -40px;
+        top: -5px;
+        opacity: 0;
+        transition: 0.25s ease-in;
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
+    @media only screen and (min-width: 1283px) {
+      position: absolute;
+    }
+  }
+
+  &-popups {
+    display: none;
+  }
+}
+
+.overlay-content-fade {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: scroll;
+  z-index: 9999;
+
+  .content-container {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (min-width: 1007px) {
+      width: 80%;
+    }
+
+    @media (max-height: 600px) {
+      top: 0;
+    }
+    
+    @include mq("phone") {
+      top: 50%;
+    }
+  }
+}
+
+.overlay-content .content-container .content-popup {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  opacity: 1;
+  background: white;
+  padding: 15px;
+  width: 100%;
+  max-width: 590px;
+  padding: 30px;
+  // @media (min-width: 479px) {
+  //   padding: 30px;
+  // }
+
+  // @media (min-width: 767px) {
+  //   width: 645px;
+  // }
+  // @media (min-width: 1283px) {
+  //   padding: 60px;
+  //   width: 770px;
+  // }
+  @media (max-height: 600px) {
+    position: fixed !important;
+    top: 0;
+    margin: 5% auto;
+    left: 0;
+    right: 0;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 38px;
+    //padding-bottom: 20px;
+    padding-right: 50px;
+
+    font-size: 3.75rem;
+    line-height: 4.4rem;
+    color: #0f2067;
+
+    @media (max-height: 600px) {
+      font-size: 1.4rem !important;
+      line-height: 2rem !important;
+      padding-bottom: 10px !important;
+      padding-right: 20px !important;
+    }
+
+      @media (max-width: 767px) {
+        font-size: 2.75rem;
+        line-height: 2.4rem;
+      }
+  }
+
+  &__desc {
+      font-size: 1.5rem;
+    line-height: 2.3rem;
+    padding-bottom: 15px;
+    > p {
+      font-size: 1.5rem;
+    line-height: 2.3rem;
+
+        a {
+      color: #00afda;
+      text-decoration: none;
+      &:hover {
+        color: #0f2067;
+        text-decoration: underline;
+      }
+    }
+    }
+  }
+
+  &__more {
+    position: relative;
+    margin-top: 25px;
+    padding-left: 20px;
+    color: black;
+    text-decoration: none;
+    transition: 0.25s ease-in;
+    display: inline-block;
+    height: 19px;
+
+    &:hover {
+      padding-left: 25px;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      width: 1px;
+      height: 10px;
+      background-color: black;
+      left: 5px;
+      top: 10px;
+    }
+
+    &::after {
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      transform: translateY(-50%) rotate(45deg);
+      width: 6px;
+      height: 6px;
+      top: 12px;
+      left: 2px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 65px;
+    right: 25px;
+    background: none;
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin: 0;
+    padding: 0;
+
+              @include mq("phone") {
+            top: 50px;
+          }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &--icon {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+
+      &::after,
+      &::before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 2px;
+        background-color: #0f2067;
+        top: 13px;
+        right: 6px;
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__video-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    .img-container {
+      img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+
+          @include mq("phone") {
+            height: 250px;
+          }
+
+      } 
+    }
+
+  }
+
+  &__video-play {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid white;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    transition: 0.25s ease-in;
+
+    &:hover {
+      background-color: white;
+
+      .content-popup__video-play-icon {
+        &::before,
+        &::after {
+          background-color:#0f2067;
+        }
+      }
+    }
+
+    &-icon {
+      position: relative;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        top: 50%;
+        width: 15px;
+        height: 2px;
+        background-color: white;
+        transition: 0.25s ease-in;
+      }
+
+      &::before {
+        top: calc(50% - 5px);
+        transform: translateY(-50%) translateX(-50%) rotate(45deg);
+      }
+
+      &::after {
+        top: calc(50% + 5px);
+        transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,227 @@
+section.standard-page-header {
+  max-width: 900px;
+  margin: 0 auto 0 0;
+
+  @include mq("tablet-wide") {
+    max-width: 100%;
+  }
+
+  h1,
+  h2 {
+    color: $primary-light-blue;
+    font-size: 6rem;
+    font-family: "OpenSans-Bold", sans-serif;
+    line-height: 7rem;
+    margin: 4rem 0 6rem 0;
+
+    @include mq("phone") {
+      font-size: 3.75rem;
+      line-height: 4.4rem;
+      padding: 0rem;
+      margin: 0;
+    }
+  }
+}
+
+section.standard-page-intro {
+  max-width: 900px;
+  margin: 0 auto 0 0;
+
+  @include mq("tablet-wide") {
+    max-width: 100%;
+  }
+
+  p {
+    color: $primary-black;
+    font-size: 2.4rem;
+    line-height: 4rem;
+    font-family: "OpenSans-Light";
+  }
+}
+
+.standard-page-rte {
+  max-width: 100%;
+  margin: 0 auto 10rem 0;
+
+  &.full-width {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @include mq("tablet-wide") {
+    max-width: 100%;
+  }
+
+  ul li {
+    a {
+      @include transition(0.3s ease);
+      display: inline;
+      text-decoration: none;
+      color: $primary-light-blue;
+      font-weight: $font-weight-regular;
+      font-family: "OpenSansRegular", sans-serif;
+
+      &:hover {
+        color: $primary-black;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  p {
+    color: $primary-black;
+
+    a {
+      @include transition(0.3s ease);
+      display: inline;
+      text-decoration: none;
+      color: $primary-light-blue;
+      font-weight: $font-weight-regular;
+      font-family: "OpenSansRegular", sans-serif;
+
+      &:hover {
+        color: $primary-black;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  div.img-wrapper {
+    max-width: 1200px;
+    min-height: 637px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100vw;
+    position: relative;
+    left: 0;
+    right: 50%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+    @include mq("tablet-wide") {
+      max-width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      display: block;
+
+      @media screen and (-ms-high-contrast: none) {
+        height: auto;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 3.75rem;
+    line-height: 4.4rem;
+    color: $primary-blue;
+    font-family: "OpenSans-Bold", sans-serif;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    line-height: 4.4rem;
+    color: $primary-blue;
+    font-family: "OpenSans-Bold", sans-serif;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    line-height: 3.4rem;
+    color: $primary-blue;
+    font-family: "OpenSans-Bold", sans-serif;
+  }
+
+  .article-downloads {
+    ul {
+      li::before {
+        display: none;
+      }
+    }
+  }
+
+  ol {
+    color: $primary-blue;
+    counter-reset: ol;
+    list-style: none;
+    margin: 0 0 2rem 0;
+    padding-left: 3rem;
+  }
+
+  ol>li {
+    position: relative;
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+    color: $primary-black;
+    padding-left: 1rem;
+  }
+
+  ol>li::before {
+    counter-increment: ol;
+    content: counter(ol) ".";
+    color: $primary-light-blue;
+    left: -1.5rem;
+    top: 0;
+    width: 1.5em;
+    display: inline-block;
+    position: absolute;
+  }
+
+  ul {
+    counter-reset: ol;
+    list-style: none;
+    margin: 0 0 2rem 0;
+    padding-left: 2rem;
+
+    >li {
+      position: relative;
+      color: $primary-black;
+      font-size: 1.8rem;
+      margin: 0 0 1rem 0;
+    }
+  }
+
+  ul>li::before {
+    content: "\2022";
+    color: $primary-light-blue;
+    left: -1.5rem;
+    width: 1.5em;
+    font-size: 2rem;
+    display: inline-block;
+    position: absolute;
+  }
+
+  @include mq("phone") {
+    .table-overflow-wrapper {
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .table-overflow-wrapper::before {
+      content: "< >";
+      background: rgba(224, 224, 224, 0.25);
+      height: 5rem;
+      line-height: 5rem;
+      text-align: center;
+      width: 5rem;
+      border-radius: 50%;
+      font-size: 2rem;
+      position: absolute;
+      top: 10%;
+      left: calc(50% - 1em);
+      -webkit-transition: opacity linear 250ms;
+      transition: opacity linear 250ms;
+      z-index: 1;
+      -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+  }
+}

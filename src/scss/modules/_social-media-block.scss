@@ -1,0 +1,306 @@
+.twitter-widget {
+  .inner {
+    .post:first-child {
+      padding-bottom: 2rem
+    }
+  }
+}
+.social-module {
+  margin: 0 auto 4rem;
+}
+.social-moduele_wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+     @include mq("phone") {
+       display: block;
+     }
+  .tweet-cont {
+    width: 50%;
+    @include mq("phone") {
+      width: 100%;
+    }
+  }
+  .tweet {
+    border: solid 1px #ddd;
+    padding: 3rem;
+    border-radius: 5px;
+    margin: 1rem 1rem 2rem 1rem;
+
+    &.tweet-half {
+      min-height: 280px; 
+    }
+
+    &.tweet-full {
+      min-height: 580px;
+    }
+
+    .tweet-post {
+
+        p {
+          font-size: 1.5rem;
+          line-height: 2.5rem;
+
+
+      }
+
+      a {
+        color: #00afda;
+        text-decoration: none;
+      }
+    }
+    .tweet-image {
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      border:solid 1px #ddd;
+      img {
+        width: 100%;
+        border-radius: 15px;
+      }
+
+      .title {
+        background-color: white;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        h5 {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .tweet-img {
+    margin: 0;
+    overflow: hidden;
+    height: 260px;
+    padding: 0 2rem 1rem 2rem;
+  }
+
+  a {
+    @include transition(0.5s ease-in-out);
+    color: $tertiary-grey-darkest;
+    &:hover {
+      color: $primary-light-blue;
+    }
+  }
+  @media (max-width: 992px) {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  date.date-tag {
+    padding: 2rem;
+  }
+
+  article {
+    min-height: 550px;
+    border: 1rem solid #fff;
+    position: relative;
+    &:first-of-type {
+      date.date-tag {
+        padding: 1rem 2rem;
+        float: right;
+      }
+    }
+
+    .icon--media {
+      height: 60px;
+      width: 60px;
+      background-color: #00afda;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      color: #fff;
+      top: -30px;
+      .icon--media-icon {
+        position: relative;
+        top: calc(50% - 10px);
+        left: calc(50% - 10px);
+        font-size: 2rem;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border: 1px solid $tertiary-grey-light;
+      z-index: -1;
+    }
+  }
+
+  .title {
+    padding: 2rem 2rem 0.5rem 2rem;
+    position: relative;
+    h3 {
+      margin: 0;
+      font-size: 30px;
+      color: $primary-black;
+      display: inline-block;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: calc(100% - 4rem);
+      height: 1px;
+      border-bottom: 1px solid $tertiary-grey-light;
+      z-index: -1;
+      bottom: 0;
+    }
+  }
+  .inner {
+    padding: 2rem;
+    p {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .social_post {
+    position: relative;
+    min-height: 250px;
+    width: 100%;
+    margin: 0;
+    img {
+      object-fit: cover;
+      position: absolute;
+      display: block;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .post {
+    //display: flex;
+    padding-top: 1rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    padding-bottom: 1rem;
+      em {
+        font-weight: bold;
+      }
+    p {
+      font-size: 15px;
+      line-height: 20px;
+      padding: 2rem;
+      width: 100%;
+      display: block;
+
+      color: $primary-grey;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        height: 6px;
+        width: 30px;
+        border-radius: 5.5px;
+        background-color: #00afda;
+        top: 0;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  .social_item {
+    position: relative;
+    min-height: 575px;
+    width: 100%;
+    margin: 0;
+    @include mq("tablet") {
+      min-height: 300px;
+    }
+    img {
+      object-fit: cover;
+      position: absolute;
+      display: block;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .social_description {
+    padding: 2rem;
+    max-height: 255px;
+    overflow: hidden;
+    p {
+      font-size: 16px;
+      color: $primary-black;
+      line-height: 24px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    .width-33 {
+      width: 50%;
+    }
+    .width-50 {
+      width: 100%;
+    }
+  }
+}
+
+
+
+.tweet-avatar {
+  position: relative;
+  display: flex;
+
+  .centrica-heading {
+    font-weight: bold;
+  }
+  .icon-Centrica-avatar {
+    font-size: 2.2rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+  }
+  .centrica-cta {
+    display: block;
+    text-decoration: none;
+  }
+  .icon-twit {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.tweet-social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  li {
+    margin: 2rem 2rem 0 1rem;
+    a {
+      text-decoration: none;
+      
+      &:hover {
+        span:before {
+          @include transition(0.2s ease-in-out);
+          color: #0f2067;
+        }
+      }
+    }
+    span {
+      font-size: 1.8rem;
+    }
+  }
+  .date {
+    margin-left: auto;
+  }
+}

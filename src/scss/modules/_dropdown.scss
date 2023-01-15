@@ -1,0 +1,374 @@
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  @include transition(0.2s ease-in-out);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: solid 1px $tertiary-grey-light;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: $tertiary-grey-lightest;
+  @include transition(0.2s ease-in-out);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  @include transition(0.2s ease-in-out);
+  background-color: $primary-light-blue;
+  border: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.dropdown {
+  background-color: $tertiary-grey-lightest;
+  border: solid 1px $tertiary-grey-lightest;
+  padding: 0.8rem 1rem;
+  min-width: 200px;
+  font-weight: 600;
+
+  &:focus {
+    border: solid 1px $primary-cyan;
+    outline: none;
+  }
+}
+
+.dropdown-alt {
+  text-decoration: none;
+  border: solid 1px $tertiary-grey-lightest;
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  color: #002744;
+  font-weight: 600;
+  font-size: 1.4rem;
+
+  &:focus {
+    border: solid 1px $primary-cyan;
+    outline: none;
+  }
+}
+
+.search-filter-wrapper {
+  @include box-shadow(2px, 3px, 4px, rgba(0, 0, 0, 0.1));
+  margin-bottom: 5rem !important;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.services-tab__list-content,
+.search-resulst-dropdown {
+  padding: 0;
+  margin: 0 0 2rem 0;
+  @include flexing();
+
+  @include mq("phone") {
+    display: block;
+  }
+
+  .search-item {
+    width: 20%;
+    position: relative;
+    border: solid 0.5rem transparent;
+
+    button {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    @include mq("phone") {
+      width: 100%;
+    }
+
+    &:first-child {
+      width: 31.6%;
+      @include mq("phone") {
+        width: 100%;
+      }
+    }
+    input,
+    select {
+      width: 100%;
+      padding: 1.5rem 1rem;
+      margin: 0;
+    }
+
+    button {
+      background-color: $primary-blue;
+      border: none;
+      color: $primary-white;
+      padding: 1.5rem 2rem;
+    }
+
+    input[type="text"] {
+      background-color: $tertiary-grey-lightest;
+      color: $tertiary-grey-darkest;
+      border: solid 1px $tertiary-grey-lightest;
+    }
+
+    select {
+      background-color: $primary-white;
+      border: solid 1px $tertiary-grey-light;
+    }
+  }
+  &.search-resulst-dropdown {
+    .search-item:first-child {
+      width: 28%;
+
+      @include mq("tablet-wide") {
+        width: 40%;
+      }
+      @include mq("phone") {
+        width: 100%;
+      }
+    }
+    .search-item {
+      width: 28%;
+      display: flex;
+
+      @include mq("tablet-wide") {
+        width: 40%;
+      }
+      @include mq("phone") {
+        width: 100%;
+      }
+      h3 {
+        width: 30%;
+        color: $primary-black;
+      }
+    }
+  }
+}
+
+.careers-searchbox {
+  padding: 0;
+  margin: 0 0 2rem 0;
+  @include flexing();
+
+  @include mq("phone") {
+    display: block;
+  }
+
+  > form {
+    width: 20%;
+    @include mq("phone") {
+      width: 100%;
+    }
+    &:first-child {
+      width: 31.6%;
+      @include mq("phone") {
+        width: 100%;
+      }
+    }
+  }
+
+  .search-item {
+    position: relative;
+    border: solid 0.5rem transparent;
+
+    button {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 1.5rem 1rem;
+      margin: 0;
+    }
+
+    button {
+      background-color: $primary-blue;
+      border: none;
+      color: $primary-white;
+      padding: 1.5rem 2rem;
+    }
+
+    input[type="text"] {
+      background-color: $tertiary-grey-lightest;
+      color: $tertiary-grey-darkest;
+      border: solid 1px $tertiary-grey-lightest;
+    }
+
+    select {
+      background-color: $primary-white;
+      border: solid 1px $tertiary-grey-light;
+    }
+  }
+}
+
+.number-length {
+  color: $tertiary-grey-light !important;
+}
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  width: 100%;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    width: 0;
+    height: 0;
+    right: 2rem;
+    bottom: 0;
+    margin: auto;
+    border-style: solid;
+    border-width: 9px 4px 0 4px;
+    border-color: #000 transparent transparent transparent;
+    pointer-events: none;
+  }
+  select {
+    border: solid 1px $tertiary-grey-light;
+    outline: 1px solid transparent;
+    cursor: pointer;
+    // Disable default styling on firefox
+    -moz-appearance: none;
+    // Disable ugly outline on firefox
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+    }
+    // Disable default styling on webkit browsers
+    -webkit-appearance: none;
+    // Disable default arrow on IE 11+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus {
+      border-color: $tertiary-grey-light;
+    }
+  }
+
+  &.result-presentation {
+    width: 33.3%;
+    @include mq("phone") {
+      width: 100%;
+    }
+  }
+}
+
+select {
+  background-color: #fff;
+  border: solid 1px #e0e4e6;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.select-selected {
+  color: #000 !important;
+  border: solid 1px $tertiary-grey-light;
+  padding: 1rem;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 22px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border: 4.5px solid transparent;
+  border-color: $primary-cyan transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent $primary-cyan transparent;
+  top: 17px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div {
+  color: #000;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.select-selected {
+  color: $primary-white;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: $primary-white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  @include box-shadow(2px, 2px, 12px, rgba(0, 0, 0, 0.2));
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: $primary-blue;
+  color: $primary-white !important;
+}

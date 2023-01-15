@@ -1,0 +1,222 @@
+.accordion_list-content {
+  min-height: 0;
+  margin-top: 2rem;
+}
+
+.accordion__list {
+  padding-left: 0;
+  margin: 0 auto 4rem;
+  max-width: 1200px;
+  list-style: none;
+
+  ul {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  li:not(:first-child) {
+    margin-top: 3.8rem;
+
+    @include mq("phone") {
+      margin-top: 1rem;
+    }
+  }
+
+  .accordion {
+    @include transition(0.3s ease-in-out);
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    background-color: $primary-white;
+    color: $primary-blue;
+    font-size: 2.2rem;
+    min-height: 90px;
+    margin: 0;
+    position: relative;
+    padding: 2.575rem 1.875rem 1.875rem 1.875rem;
+    border-right: 1px solid #e0e4e6;
+    border-left: 1px solid #e0e4e6;
+    border-top: 1px solid #e0e4e6;
+    cursor: pointer;
+    @include mq("phone") {
+      font-size: 1.8rem;
+      padding: 2.875rem 5.4rem 1.875rem 1.875rem;
+    }
+    date {
+      display: block;
+      color: $tertiary-grey-dark;
+      font-size: 1.4rem;
+      margin: 1rem 0 0 0;
+    }
+    &.active {
+      border-bottom: 1px solid $primary-white;
+      color: $primary-light-blue;
+    }
+
+    &:hover {
+      @include transition(0.1s ease-in-out);
+      color: $primary-light-blue;
+    }
+  }
+
+  li.active .qa-toggle::before,
+  li.active .qa-toggle::after {
+    transform: rotate(45deg);
+  }
+
+  li.active .icon-Icon_chevron_down1 {
+    transform: rotate(180deg);
+  }
+
+  li.active .accordion {
+    color: $primary-light-blue;
+  }
+  .icon-Icon_chevron_down1 {
+    @include transition(0.3s ease-in-out);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    transform: rotate(0deg);
+    color: $primary-light-blue;
+  }
+
+  .qa-toggle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    &:after,
+    &:before {
+      content: "";
+      background-color: $primary-light-blue;
+      position: absolute;
+      transition: transform 0.4s;
+    }
+    &::before {
+      content: "";
+      width: 3px;
+      height: 20px;
+      margin: 0 9px;
+    }
+    &:after {
+      content: "";
+      width: 20px;
+      height: 3px;
+      margin: 9px 0;
+    }
+  }
+
+  .panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.2s ease-out;
+    margin: 0 auto;
+    border-right: 1px solid #e0e4e6;
+    border-left: 1px solid #e0e4e6;
+    border-top: 1px solid #e0e4e6;
+    border-bottom: 1px solid #e0e4e6;
+    p {
+      color: $primary-black;
+    }
+  }
+
+  .inner {
+    max-width: 900px;
+    margin: 0;
+    padding: 0 5rem;
+
+    &.full-width {
+      max-width: 100%;
+    }
+    @media (max-width: 992px) {
+      padding: 0 2rem;
+    }
+  }
+
+  &.presentations {
+    margin: 0 auto 10rem;
+    border-bottom: solid 1px #e0e4e6;
+
+    > li {
+      margin: 0;
+
+      .panel {
+        border: none;
+        > .inner {
+          @include flexing();
+          max-width: 100%;
+          padding: 0 0 0 2rem;
+          margin-bottom: 3rem;
+        }
+      }
+
+      .listing-downloads {
+        @include flexing();
+        width: 60%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        @include mq("phone") {
+          width: 100%;
+        }
+        > li {
+          width: 50%;
+          margin-bottom: 5rem;
+          @include mq("phone") {
+            width: 100%;
+          }
+          &:not(:first-child) {
+            margin-top: 0;
+          }
+
+          &::before {
+            display: none;
+          }
+          h3,
+          p {
+            margin: 0;
+            padding: 0;
+          }
+          a {
+            color: $primary-light-blue;
+            font-size: 1.4rem;
+            text-decoration: none;
+
+            .icon {
+              font-size: 1.1rem;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+
+      > aside {
+        margin-right: auto;
+        width: 40%;
+      }
+
+      .accordion {
+        border: none;
+        border-top: solid 1px #e0e4e6;
+        color: $primary-light-blue;
+        @include transition(0.1s ease-in-out);
+
+        &:hover {
+          color: $primary-light-blue;
+        }
+        date {
+          pointer-events: none;
+        }
+        span {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.skinny-banner-wrapper-new {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  .skinny-banner {
+    >img {
+      position: relative;
+      width: 100%;
+      height: 315px;
+      object-fit: cover;
+
+      @media screen and (-ms-high-contrast: none) {
+        height: auto;
+      }
+    }
+
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(45deg, #000 0%, rgba(15, 32, 103, 0) 50%);
+  }
+
+  .cntwrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 2;
+    padding: 60px 0;
+
+    @include mq("tablet-wide") {
+      padding: 60px 2rem;
+    }
+
+    @include mq("phone") {
+      padding: 60px 2rem;
+    }
+
+    h4 {
+      margin: 0 0 -2rem 0.2rem;
+      padding: 0;
+      text-transform: uppercase;
+      color: #fff;
+    }
+  }
+
+  h1,
+  h2 {
+    font-size: 6rem;
+    line-height: 7rem;
+    margin: 1.5rem 0 0 0;
+    font-family: "OpenSans-Bold", sans-serif;
+    width: 90%;
+    color: #fff;
+
+    @include mq("tablet-wide") {
+      font-size: 4rem;
+      line-height: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    @include mq("phone") {
+      font-size: 3rem !important;
+    }
+  }
+
+
+
+  .landing-banner-logo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    z-index: 50;
+
+    @include mq("phone") {
+      width: 150px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .rectangle-blue {
+    max-width: 100%;
+  }
+}

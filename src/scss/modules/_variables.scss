@@ -1,0 +1,114 @@
+@import "./_typography.scss";
+.color-palette {
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+
+  .color-palette__swatch {
+    margin: 0 1rem 1rem 0;
+    padding: 0;
+    list-style: none;
+    width: 150px;
+    height: 100px;
+    position: relative;
+
+    span {
+      background-color: #eee;
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      width: 100%;
+      color: #000;
+      left: 0;
+      right: 0;
+    }
+
+    &.cyan {
+      background-color: $primary-cyan;
+    }
+
+    &.grey {
+      background-color: $primary-grey;
+    }
+
+    &.white {
+      background-color: $primary-white;
+    }
+
+    &.deep-blue {
+      background-color: $secondary-blue;
+    }
+
+    &.line-green {
+      background-color: $secondary-lime-green;
+    }
+
+    &.bright-orange {
+      background-color: $secondary-orange;
+    }
+
+    &.grey-tint-2 {
+      background-color: $tertiary-grey-darkest;
+    }
+
+    &.grey-tint-3 {
+      background-color: $tertiary-grey-dark;
+    }
+
+    &.grey-tint-4 {
+      background-color: $tertiary-grey-light;
+    }
+
+    &.grey-tint-5 {
+      background-color: $tertiary-grey-lightest;
+    }
+
+    &.yellow {
+      background-color: $tertiary-yellow;
+    }
+
+    &.red {
+      background-color: $tertiary-red;
+    }
+
+    &.green {
+      background-color: $tertiary-green;
+    }
+
+    &.blue {
+      background-color: $primary-blue;
+    }
+
+    &.blue-tint-a {
+      background-color: $secondary-blue-a;
+    }
+    &.blue-tint-b {
+      background-color: $secondary-blue-b;
+    }
+    &.blue-tint-c {
+      background-color: $secondary-blue-c;
+    }
+    &.blue-tint-d {
+      background-color: $secondary-blue-d;
+    }
+
+    &.pink {
+      background-color: $tertiary-pink;
+    }
+    &.melon {
+      background-color: $tertiary-melon;
+    }
+    &.orange {
+      background-color: $tertiary-orange;
+    }
+    &.lime {
+      background-color: $tertiary-lime;
+    }
+    &.tree {
+      background-color: $tertiary-tree;
+    }
+    &.teal {
+      background-color: $tertiary-teal;
+    }
+  }
+}

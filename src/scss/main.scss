@@ -1,5 +1,8 @@
-$red: red;
+//modules
+@import "modules/palette";
+@import "modules/variables";
+@import "modules/mixins";
+@import "modules/typography";
 
-body{
-    background-color: $red;
-}
+//partials
+@import "partials/fonts";

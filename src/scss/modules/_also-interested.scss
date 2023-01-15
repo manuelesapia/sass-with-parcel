@@ -1,0 +1,97 @@
+.also-interested {
+    margin-bottom: 5rem;
+
+    & > h2 {
+        text-align: left;
+    }
+}
+
+.also-interested__module {
+    @include flexing();
+    margin: 0;
+
+    .also-interested__module--item {
+        border: solid 1rem transparent;
+        width: 50%;
+
+        @include mq("phone") {
+            width: 100%;
+        }
+
+        .item {
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+
+            &:hover {
+                img {
+                    @include transform(scale(1.1));
+                }
+            }
+
+            .details {
+                padding: 2rem;
+                border: solid 1px $tertiary-grey-light;
+                min-height: 240px;
+
+                &.details-border-none {
+                    border-left: none;
+                    border-bottom: none;
+                    border-right: none;
+                }
+
+                @include mq("tablet") {
+                    min-height: 330px;
+                }
+
+                @include mq("phone") {
+                    min-height: 140px;
+                }
+
+                h3 {
+                    min-height: 100px;
+                    font-family: "OpenSans-Bold", sans-serif;
+                    font-size: 2rem;
+                    line-height: 3.2rem;
+                    letter-spacing: -0.2px;
+                    color: #0F2067;
+                    text-align: center;
+                }
+
+                .author {
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: center;
+                    max-width: 320px;
+
+                    .photo {
+                        overflow: hidden;
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        margin-right: 20px;
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .name-position {
+                        text-align: left;
+
+                        span {
+                            display: block;
+                            color: #002744;
+
+                            em {
+                                color: #aaa;
+                                font-style: normal;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

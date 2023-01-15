@@ -1,0 +1,62 @@
+//Primary Colours
+$primary-cyan: #00a0d5;
+$primary-grey: #33495b;
+$primary-white: #ffffff;
+$primary-black: #002744;
+
+$secondary-blue: #0a28b9;
+$secondary-lime-green: #97d700;
+$secondary-orange: #f86611;
+
+$navigation-tint: #6f79a4;
+
+$tertiary-grey-darkest: #002744;
+$tertiary-grey-dark: #aeb6bd;
+$tertiary-grey-light: #e0e4e6;
+$tertiary-grey-lightest: #f4f5f6;
+
+$tertiary-yellow: #ffc600;
+$tertiary-red: #e4002b;
+$tertiary-green: #007a53;
+
+//Centrica Blues
+$primary-blue: #0f2067;
+$primary-light-blue: #00afda;
+$primary-blue-hover: #0c1b57;
+
+//Secondary Colours
+$secondary-blue-a: #00456b;
+$secondary-blue-b: #00afda;
+$secondary-blue-c: #84cee4;
+$secondary-blue-d: #bce3e8;
+
+//Tertiary Colours
+$tertiary-pink: #d34193;
+$tertiary-melon: #f6a700;
+$tertiary-orange: #ec6519;
+$tertiary-lime: #c8d400;
+$tertiary-tree: #7eb22d;
+$tertiary-teal: #21a498;
+
+//Cta Colours
+$cta-cyan: $primary-cyan;
+$cta-cyan-hover: #1a7498;
+$cta-cyan-pressed: $tertiary-grey-light;
+$primary-blue-pressed: #f4f5f6;
+$primary-blue-pressed-text: #aeb6bd;
+$primary-blue-pressed-secondary: #f4f5f6;
+$primary-blue-pressed-text-secondary: rgba(15, 32, 103, 0.5);
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font: 300 13px/1.6 "OpenSansRegular", sans-serif, Helvetica, Arial;
+  color: $tertiary-red;
+}
+
+body,
+html {
+  min-height: 100vh;
+}

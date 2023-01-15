@@ -1,0 +1,161 @@
+.heading-h1-bio {
+  font-size: 6rem;
+  z-index: 1;
+  color: #00afda;
+  font-family: "OpenSans-Bold", sans-serif;
+  margin-bottom: 0;
+  @include mq("phone") {
+    font-size: 3rem;
+  }
+}
+.heading-h2-bio {
+  color: #aeb6bd;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 3.2rem;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  font-family: "OpenSans-Bold", sans-serif;
+}
+
+.leadership-bio {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+
+  @include mq("phone") {
+    flex-direction: column;
+  }
+
+  .media {
+    width: 41.6666%;
+
+    @include mq("phone") {
+      width: 100%;
+    }
+
+    .bio-picture {
+      overflow: hidden;
+       max-height: 600px;
+        @include mq("phone") {
+          max-height: 300px;
+        }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .article-downloads h4 {
+      color: #0f2067;
+    }
+  }
+
+  .biog {
+    width: 50%;
+    max-width: 100%;
+    margin: 0;
+
+    @include mq("phone") {
+      width: 100%;
+    }
+
+    .membership {
+      h3 {
+        margin-top: 0;
+        color: #0f2067;
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 4.4rem;
+      }
+
+      .accordion__list {
+        margin: 0;
+        li {
+          margin-top: 0rem;
+          &.active {
+          }
+        }
+
+        span.icon-Icon_chevron_right1 {
+          display: inline-block;
+          font-size: 1.2rem;
+        }
+        .accordion {
+          border-right: none;
+          border-left: none;
+          border-top: none;
+          border-bottom: none;
+          color: #00afda;
+          font-size: 1.8rem;
+          font-weight: bold;
+          line-height: 3.2rem;
+          text-decoration: none;
+          margin-bottom: 1.6rem;
+          padding: 1rem 0;
+          min-height: 0.5rem;
+          margin: 0;
+        }
+        .panel {
+          border-right: none;
+          border-left: none;
+          border-top: none;
+          border-bottom: none;
+        }
+        .qa-toggle {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          margin-left: 1rem;
+          display: inline-block;
+          right: auto;
+          display: none;
+        }
+
+        .inner {
+          padding: 0;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.blogs-speeches {
+  h2 {
+    font-size: 3rem;
+  }
+  .panels-two-wrapper {
+    margin: -1rem;
+  }
+  a {
+    text-decoration: none;
+  }
+  .author {
+    justify-content: center;
+  }
+  .details {
+    height: 270px;
+    max-height: 500px;
+    text-align: center;
+    border: 1px solid #e0e4e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5rem;
+    h3 {
+      margin: 1rem 0 0;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 4rem;
+      padding: 0 1rem;
+      font-size: 2.2rem;
+      line-height: 3rem;
+    }
+  }
+}
