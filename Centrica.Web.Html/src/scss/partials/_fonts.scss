@@ -1,0 +1,111 @@
+/*
+This CSS resource incorporates links to font software which is the valuable copyrighted
+property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+Imaging with any questions regarding Web Fonts:  http://www.fonts.com
+*/
+
+// @font-face {
+//   font-family: "Helvetica Now Micro W01 Light";
+//   src: url("../../../Centrica.Web.Main/wwwroot/fonts/39e28ff8-ed30-41dd-8248-84c7a8bb6604.woff2")
+//       format("woff2"),
+//     url("../../../Centrica.Web.Main/wwwroot/fonts/b2c6749f-05a4-4c43-8945-b70c52ee0a3b.woff")
+//       format("woff");
+// }
+
+// @font-face {
+//   font-family: "Helvetica Now Text W01 Light";
+//   src: url("../../../Centrica.Web.Main/wwwroot/fonts/f0a513eb-aa29-40cd-b5d5-058cfdc9fb35.woff2")
+//       format("woff2"),
+//     url("../../../Centrica.Web.Main/wwwroot/fonts/cf0e8515-0fc6-40a8-96bf-e1303d206b81.woff")
+//       format("woff");
+// }
+// @font-face {
+//   font-family: "Helvetica Now Text W05 Regular";
+//   src: url("../../../Centrica.Web.Main/wwwroot/fonts/5eec4451-e90c-42e7-b4d8-9b8654a65568.woff2")
+//       format("woff2"),
+//     url("../../../Centrica.Web.Main/wwwroot/fonts/f7cf763b-e79b-4c28-af92-803e0c3f16d4.woff")
+//       format("woff");
+// }
+// @font-face {
+//   font-family: "Helvetica Now Text W05 Bold";
+//   src: url("../../../Centrica.Web.Main/wwwroot/fonts/2a13627f-dba8-48e1-935c-a404f5293139.woff2")
+//       format("woff2"),
+//     url("../../../Centrica.Web.Main/wwwroot/fonts/ce7a1fe7-2605-427a-b064-a01ebce69295.woff")
+//       format("woff");
+// }
+// @font-face {
+//   font-family: "Helvetica Now Display W01 Bold";
+//   src: url("../../../Centrica.Web.Main/wwwroot/fonts/f0cbab32-010c-4ff1-8be8-7d74011f2548.woff2")
+//       format("woff2"),
+//     url("../../../Centrica.Web.Main/wwwroot/fonts/79e75c13-a7cb-4154-83dc-4dfb2aec1b11.woff")
+//       format("woff");
+// }
+// @font-face {
+//   font-family: "Helvetica Now Display W01 XBold";
+//   src: url("../../../Centrica.Web.Main/wwwroot/fonts/13ca6b78-8b50-4c1b-ab2b-f5f977744644.woff2")
+//       format("woff2"),
+//     url("../../../Centrica.Web.Main/wwwroot/fonts/07a54a3f-7d5e-4b4b-a8de-51ea987d4c2f.woff")
+//       format("woff");
+// }
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-xbold: 800;
+
+// for Headings h1 h2 etc
+@mixin xBoldFontforHeadings() {
+  font-weight: $font-weight-xbold;
+  font-family: "Helvetica Now Display W01 XBold", sans-serif;
+}
+@mixin boldFontforHeadings() {
+  font-weight: $font-weight-bold;
+  font-family: "Helvetica Now Display W01 Bold", sans-serif;
+}
+@mixin boldFontforHeadingsh3h4h5() {
+  font-weight: $font-weight-bold;
+  font-family: "Helvetica Now Text W05 Bold", sans-serif;
+}
+@mixin regularFont() {
+  font-weight: $font-weight-regular;
+  font-family: "Helvetica Now Text W05 Regular", sans-serif;
+}
+
+@mixin lightFont() {
+  font-weight: $font-weight-light;
+  font-family: "Helvetica Now Text W01 Light", sans-serif;
+}
+
+@mixin microLightFont() {
+  font-weight: $font-weight-light;
+  font-family: "Helvetica Now Micro W01 Light", sans-serif;
+}
+
+.x-bold {
+  @include xBoldFontforHeadings();
+}
+
+.regular-weight {
+  font-weight: $font-weight-regular;
+  font-family: "Helvetica Now Text W05 Regular", sans-serif;
+}
+.light-weight {
+  font-weight: $font-weight-light;
+  font-family: "Helvetica Now Text W05 Light", sans-serif;
+}
+.bold-weight {
+  font-weight: $font-weight-bold;
+  font-family: "Helvetica Now Text W05 Bold", sans-serif;
+}
+.xbold-weight {
+  font-weight: $font-weight-semibold;
+  font-family: "Helvetica Now Display W01 XBold", sans-serif;
+}
+.standard-into-text {
+  font-family: "Helvetica Now Text W05 Regular", sans-serif;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  font-weight: 400;
+}

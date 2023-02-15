@@ -1,0 +1,76 @@
+@import "../modules/palette";
+.index-showroom {
+  ul {
+    padding: 0;
+    margin: 0 auto;
+    padding-left: 5rem;
+    margin-top: 5rem;
+    li {
+      a {
+        text-decoration: none;
+        color: $primary-black;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.Design-System span {
+  padding: 3rem;
+  display: block;
+}
+
+.primary span {
+  background-color: $primary-blue;
+}
+
+.Astronaut span {
+  background-color: $astronaut-blue;
+}
+
+.Cerulean span {
+  background-color: $cerulean;
+}
+
+.Seagull span {
+  background-color: $seagull;
+}
+
+.Powder-blue span {
+  background-color: $powderblue;
+}
+
+.Cerise span {
+  background-color: $cerise;
+}
+
+.Selective-Yellow span {
+  background-color: $selective-yellow;
+}
+
+.Tango span {
+  background-color: $tango;
+}
+
+.Yellow span {
+  background-color: $yellow;
+}
+
+.Atlantis span {
+  background-color: $atlantis;
+}
+
+.Java span {
+  background-color: $java;
+}
+
+.Success span {
+  background-color: $success;
+}
+
+.Error span {
+  background-color: $error;
+}

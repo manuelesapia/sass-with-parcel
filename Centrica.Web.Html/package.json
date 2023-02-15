@@ -1,0 +1,21 @@
+{
+  "name": "base-project-centrica",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html --no-content-hash --dist-dir ../Comprend.Umbraco.Web/wwwroot/static"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
+    "parcel": "^2.8.2"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^4.0.31",
+    "flickity": "^2.3.0",
+    "jquery": "^3.6.3"
+  }
+}

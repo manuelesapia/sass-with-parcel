@@ -1,0 +1,39 @@
+//Modules
+@import "modules/_normalize.scss";
+@import "modules/_grids.scss";
+@import "modules/_image.scss";
+@import "modules/_palette.scss";
+@import "modules/mixins";
+@import "modules/typography";
+
+//partials
+@import "partials/_fonts.scss";
+@import "partials/_navigation.scss";
+@import "partials/_footer.scss";
+@import "partials/icons";
+
+//views
+
+//@import "views/_enabler-map-block.scss";
+
+@import "views/_careers-page-2022.scss";
+@import "views/_annual-report-2020.scss";
+@import "views/_annual-report-2021.scss";
+@import "views/_shorthand-components.scss";
+@import "views/design-system";
+html {
+  font-size: 62.5%;
+}
+body {
+  font: 300 13px/1.6 "Helvetica Now Text W05 Regular", sans-serif, Helvetica,
+    Arial;
+}
+main {
+  padding-top: 110px;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
