@@ -1,0 +1,51 @@
+// style for news behind 2020 years
+div.imported__news {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+  .headline-wrapper {
+    margin-bottom: 4rem;
+  }
+  .headline-wrapper h2 {
+    margin-top: 2rem;
+  }
+  .rich-text-editor ul li:before {
+    display: none;
+  }
+  .headline-img img {
+    width: 100%;
+    display: block;
+  }
+  .headline-img {
+    margin-bottom: 4rem;
+  }
+  time {
+    @include microLightFont();
+  }
+  blockquote.text-blockquote {
+    border-left: 4px solid $cerulean;
+    padding-left: 3rem;
+    margin: 0;
+    margin-bottom: 5rem;
+    background: linear-gradient(
+      120.74deg,
+      #e7ffff 0%,
+      rgba(231, 255, 255, 0) 100%
+    );
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  blockquote.text-blockquote p {
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+    letter-spacing: -0.5px;
+    @include boldFontforHeadings();
+  }
+  blockquote.text-blockquote p.bold-weight.title {
+    @include lightFont();
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+  }
+}

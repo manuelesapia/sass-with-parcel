@@ -246,7 +246,6 @@ header.main__navigation {
 
 .sub__menu__main {
   height: 100vh;
-  pointer-events: none;
   opacity: 0;
   transition: all 0.25s cubic-bezier(0.86, 0, 0.07, 1);
   position: relative;
@@ -255,6 +254,7 @@ header.main__navigation {
   left: 0;
   width: 100%;
   position: absolute;
+  border: 1px solid red;
   @include mq("tablet-wide") {
     display: none;
   }
@@ -273,7 +273,6 @@ header.main__navigation {
   }
 }
 .sub__menu__main.is__active {
-  pointer-events: auto;
   opacity: 1;
   display: flex;
 }
@@ -311,9 +310,6 @@ header.main__navigation {
 .sub__menu__inner__wrapper {
   padding: 0;
   display: flex;
-  padding-left: calc(6.944vw + 130px);
-  overflow: hidden;
-  height: 100%;
 }
 
 .menu__nav__cards {
@@ -387,37 +383,41 @@ header.main__navigation {
   }
 }
 
-.sub__menu__level_two,
-.sub__menu__level_three {
-  display: none !important;
-}
-.sub__menu__level_two.is__active {
-  display: flex !important;
-  position: absolute;
-  left: 37%;
-  z-index: 10;
-  background-color: #fff;
-  &:before {
-    content: "";
-    background-color: #fff;
-    position: absolute;
-    width: 100vw;
-    left: 50%;
-    margin-left: -50vw;
-    right: 50%;
-    margin-right: -50vw;
-    height: 100%;
-    z-index: -1;
-    bottom: 0;
-  }
+.sub__menu__level_one {
+  width: 33%;
+  position: relative;
+  display: block;
+  list-style: none;
+  margin: 0;
 }
 
-.sub__menu__level_three.is__active {
-  display: flex !important;
+.sub__menu__level_two {
   position: absolute;
-  left: 70%;
-  z-index: 9;
-  background-color: #fff;
+  right: 0;
+  z-index: 10;
+  background-color: red;
+  left: 100%;
+  top: 0;
+  border: 1px solid red;
+  width: 100%;
+  padding: 4rem;
+  display: none;
+}
+
+.sub__menu__level_two.is__active {
+  display: block;
+}
+
+.sub__menu__level_three {
+  display: none;
+  z-index: 10;
+  width: 100%;
+  background-color: green;
+  display: none;
+  position: absolu;
+}
+.sub__menu__level_three.is__active {
+  display: block;
 }
 
 li.holder_page a {
@@ -427,25 +427,15 @@ li.holder_page a {
 .sub__menu__level_one,
 .sub__menu__level_two,
 .sub__menu__level_three {
-  position: relative;
-  display: flex;
-  flex-flow: column;
-  list-style: none;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
   &::-webkit-scrollbar {
     background-color: transparent;
     width: 5px;
   }
-
   > h5 {
     padding-left: 3rem;
     margin-bottom: 3rem;
   }
-  li {
+  > li {
     padding-bottom: 0.8rem;
     padding-left: 3rem;
     padding-top: 0.8rem;
@@ -454,16 +444,16 @@ li.holder_page a {
       background-color: $azure;
     }
   }
-  li button {
+  > li button {
     background-color: transparent;
     border: 0;
   }
-  li a,
-  li button {
+  > li a,
+  > li button {
     display: inline-block;
   }
-  li a,
-  li button {
+  > li a,
+  > li button {
     &::after {
       content: "";
       display: block;
@@ -476,14 +466,14 @@ li.holder_page a {
       background: $cerulean;
     }
   }
-  li:hover {
+  > li:hover {
     a::after,
     button::after {
       transform: scaleX(1);
     }
   }
-  li:not(.holder_page):hover a,
-  li:hover button {
+  > li:not(.holder_page):hover a,
+  > li:hover button {
     text-shadow: 0 0 0.65px #151d3e, 0 0 0.65px #151d3e;
   }
 }
@@ -548,14 +538,12 @@ li.holder_page a {
   height: 100%;
   display: flex;
   padding-top: 2.5rem;
-  transform: translateY(-20%);
-  opacity: 0;
   @include transition(0.2s ease);
   padding-top: 5rem;
   padding-right: 4rem;
   padding-left: 10rem;
 }
-.sub__menu__main.is__active .divv {
-  transform: translateY(0);
-  opacity: 1;
-}
+// .sub__menu__main.is__active .divv {
+//   transform: translateY(0);
+//   opacity: 1;
+// }

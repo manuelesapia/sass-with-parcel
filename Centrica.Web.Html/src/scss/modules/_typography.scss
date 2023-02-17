@@ -126,8 +126,7 @@ h5 {
   font-size: 6rem;
   z-index: 1;
   color: $primary-light-blue;
-  @include boldFontforHeadings();
-
+  @include boldFontforHeadingsh3h4h5();
   @include mq("phone") {
     font-size: 3rem;
   }
@@ -141,8 +140,7 @@ h5 {
 .heading-h3 {
   font-size: 2.5rem;
   z-index: 1;
-  @include boldFontforHeadings();
-
+  @include boldFontforHeadingsh3h4h5();
   @include mq("phone") {
     font-size: 2rem;
     line-height: 2.5rem;
@@ -152,12 +150,12 @@ h5 {
 .heading-h4 {
   font-size: 1.8rem;
   line-height: 36px;
-  @include boldFontforHeadings();
+  @include boldFontforHeadingsh3h4h5();
 }
 
 .heading-h5 {
   font-size: 1.5rem;
-  @include boldFontforHeadings();
+  @include boldFontforHeadingsh3h4h5();
   line-height: 26px;
 }
 
@@ -165,7 +163,7 @@ a.link_type_2022 {
   font-size: 2rem;
   line-height: 3.2rem;
   color: #0f2067;
-  @include boldFontforHeadings();
+  @include boldFontforHeadingsh3h4h5();
   text-decoration: none;
   border-bottom: 2px solid transparent;
   padding-bottom: 3px;
@@ -190,6 +188,12 @@ a.link_type_2022 {
     background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M17.6765 11.1998L16.2902 9.9002L13.1834 13.2144V2H11.2834V13.1042L8.19555 9.60507L6.77118 10.8619L12.2121 17.0284L17.6765 11.1998Z' fill='%230F2067'/%3e%3cpath d='M18.5667 15.6167V19.1H5.9V15.6167H4V21H20.4667V15.6167H18.5667Z' fill='%230F2067'/%3e%3c/svg%3e")
       no-repeat 50% 50%;
   }
+}
+
+em,
+i {
+  @include lightFont();
+  color: $primary-blue;
 }
 
 main p,
@@ -440,7 +444,7 @@ a.download__link {
     position: relative;
     font-size: 1.8rem;
     margin: 0 0 1rem 0;
-    color: $primary-black;
+    color: $primary-blue;
     margin-top: 0 !important;
   }
 
@@ -460,9 +464,7 @@ a.download__link {
       display: inline;
       text-decoration: none;
       color: $primary-light-blue;
-      font-weight: $font-weight-regular;
-      font-family: "OpenSansRegular", sans-serif;
-
+      @include lightFont();
       &:hover,
       &:active,
       &:focus {
@@ -479,10 +481,7 @@ a.download__link {
       @include transition(0.3s ease);
       display: inline;
       text-decoration: none;
-      color: $primary-light-blue;
-      font-weight: $font-weight-regular;
-      font-family: "OpenSansRegular", sans-serif;
-
+      @include lightFont();
       &:hover,
       &:active,
       &:focus {
