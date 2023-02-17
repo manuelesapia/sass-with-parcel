@@ -20,14 +20,13 @@ function init() {
 var navigationDesktop = {
   init: function () {
     const openMenu = document.querySelectorAll(".main__menu__item__holder");
-    const closeMenu = document.querySelector(".close__nav");
+    const closeMenu = document.querySelectorAll(".close__nav");
     const search = document.querySelector(".icon__search");
     const openLeveltwo = document.querySelectorAll(".has_sub_menu_level_two");
     const openLevelthree = document.querySelectorAll(
       ".has_sub_menu_level_three"
     );
     const sub__menu__main = document.querySelectorAll(".sub__menu__main");
-    const menu__nav__cards = document.querySelector(".menu__nav__cards");
 
     // top menu items
     for (const [elemIndex, elem] of openMenu.entries()) {
@@ -41,6 +40,9 @@ var navigationDesktop = {
             current.classList.remove("is__active");
           } else {
             current.classList.add("is__active");
+            for (const item of elem.querySelectorAll(".is__active")) {
+              item.classList.remove("is__active");
+            }
           }
         }
 
@@ -59,7 +61,7 @@ var navigationDesktop = {
 
     // level two
     for (const [levelTwoIndex, levelTwo] of openLeveltwo.entries()) {
-      levelTwo.addEventListener("click", function () {
+      levelTwo.querySelector("button").addEventListener("click", function () {
         for (const [levelTwoIndexItem, levelTwoItem] of document
           .querySelectorAll(".sub__menu__level_two")
           .entries()) {
@@ -77,23 +79,15 @@ var navigationDesktop = {
             }
           }
         }
-        // if (menu__nav__cards.style.visibility) {
-        //   menu__nav__cards.style.visibility = "";
-        // } else {
-        //   menu__nav__cards.style.visibility = "hidden";
-        // }
       });
     }
 
     //level three
     for (const [levelThreeIndex, levelThree] of openLevelthree.entries()) {
       levelThree.addEventListener("click", function () {
-        // console.log(levelThree.parentElement);
-
         for (const [levelThreeIndexItem, levelThreeItem] of document
           .querySelectorAll(".sub__menu__level_three")
           .entries()) {
-          //console.log(levelThreeItem);
           if (
             levelThreeIndexItem == levelThreeIndex &&
             !levelThreeItem.classList.contains("is__active")
@@ -103,25 +97,22 @@ var navigationDesktop = {
             levelThreeItem.classList.remove("is__active");
           }
         }
-        // if (menu__nav__cards.style.visibility) {
-        //   menu__nav__cards.style.visibility = "";
-        // } else {
-        //   menu__nav__cards.style.visibility = "hidden";
-        // }
       });
     }
 
-    // closeMenu.addEventListener("click", function () {
-    //   closeMenu.classList.toggle("is__active");
-    //   if (closeMenu.className.includes("is__active")) {
-    //     document
-    //       .querySelector(".sub__menu__main")
-    //       .classList.remove("is__active");
-    //     document
-    //       .querySelector(".main__menu__item__holder")
-    //       .item.classList.remove("is__active");
-    //   }
-    // });
+    for (const closeButton of closeMenu) {
+      closeButton.addEventListener("click", function () {
+        closeButton.classList.toggle("is__active");
+        if (closeButton.className.includes("is__active")) {
+          closeButton
+            .closest(".sub__menu__main")
+            .classList.remove("is__active");
+          closeButton
+            .closest(".main__menu__item__holder")
+            .classList.remove("is__active");
+        }
+      });
+    }
 
     search.addEventListener("click", function () {
       search.classList.toggle("is-open");
