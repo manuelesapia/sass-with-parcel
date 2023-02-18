@@ -19,8 +19,10 @@ function init() {
 }
 var navigationMobile = {
   init: function () {
+    if (window.innerWidth < 1024) {   
+
     const pageHeader = document.querySelector(".main__navigation");
-    const toggleMenu = pageHeader.querySelector(".toggle-menu");
+    const toggleMenu = pageHeader.querySelector(".mobile__menu__button");
     const menuWrapper = pageHeader.querySelector(".menu-wrapper");
     const level1Links = pageHeader.querySelectorAll(".level-1 > li > a");
     const listWrapper2 = pageHeader.querySelector(".list-wrapper:nth-child(2)");
@@ -79,7 +81,7 @@ var navigationMobile = {
           .classList.remove(isActiveClass);
       });
     }
-    
+  }
   },
 };
 
