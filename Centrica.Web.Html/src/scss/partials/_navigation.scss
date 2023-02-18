@@ -6,12 +6,19 @@ header.main__navigation {
   right: 0;
   z-index: 150;
   background-color: #fff;
+  @include mq("tablet-wide") {
+    height: 62px;
+    border-bottom: 1px solid #000;
+  }
   > .row {
     align-items: center;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     height: 90px;
+    @include mq("tablet-wide") {
+      height: 62px;
+    }
   }
   .search__block {
     display: flex;
@@ -38,6 +45,10 @@ header.main__navigation {
   .shareprice__block {
     margin-left: 2vw;
     width: 22rem;
+    // Mobile
+    @include mq("tablet-wide") {
+      display: none;
+    }
     @media (max-width: 1350px) {
       width: 9rem;
     }
@@ -74,8 +85,26 @@ header.main__navigation {
 
 .Header_logo_Centrica {
   margin-right: 6.944vw;
+  @include mq("tablet-wide") {
+    margin-right: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
-
+@include mq("tablet-wide") {
+  .main__menu.is__active {
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+    display: flex;
+    position: absolute;
+    top: 6.5rem;
+    left: 0rem;
+    flex-direction: column;
+  }
+}
 .main__menu {
   flex-flow: row nowrap;
   flex: 1 0 auto;
@@ -86,6 +115,31 @@ header.main__navigation {
   display: flex;
   @include mq("tablet-wide") {
     display: none;
+    &::before {
+      content: "";
+      width: 100vw;
+      height: 100%;
+      z-index: 0;
+      background-color: #fff;
+      margin-left: 0;
+      margin-right: 0;
+      position: absolute;
+      top: 0;
+      right: 20%;
+    }
+    &::after {
+      content: "";
+      background-color: #e7ffff;
+      position: absolute;
+      width: 100vw;
+      left: 50%;
+      margin-left: -50vw;
+      right: 50%;
+      margin-right: -50vw;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+    }
   }
   .main__menu__item {
     display: flex;
@@ -95,6 +149,10 @@ header.main__navigation {
     height: 40px;
     line-height: 1;
     cursor: pointer;
+    @include mq("tablet-wide") {
+      width: 100%;
+      justify-content: flex-start;
+    }
   }
   button.main__menu__item__holder {
     position: relative;
@@ -133,12 +191,12 @@ header.main__navigation {
       margin-top: 4px;
       background: #00afda;
     }
-    // &:hover {
-    //   text-shadow: 0 0 0.65px #151d3e, 0 0 0.65px #151d3e;
-    //   &::after {
-    //     transform: scaleX(1);
-    //   }
-    // }
+    &:hover {
+      text-shadow: 0 0 0.65px #151d3e, 0 0 0.65px #151d3e;
+      &::after {
+        transform: scaleX(1);
+      }
+    }
   }
 }
 
@@ -154,6 +212,9 @@ header.main__navigation {
   z-index: -1;
   @include transition(0.3s ease);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  @include mq("tablet-wide") {
+    padding: 0;
+  }
   &.is-open {
     visibility: visible;
     opacity: 1;
@@ -187,6 +248,9 @@ header.main__navigation {
     top: 25%;
     left: 50%;
     transform: translateX(-50%);
+    @include mq("tablet-wide") {
+      top: 5%;
+    }
   }
   input#search_main {
     width: 100%;
@@ -234,6 +298,15 @@ header.main__navigation {
       margin: 0;
       padding: 0;
       display: flex;
+      @include mq("tablet-wide") {
+        flex-wrap: wrap;
+      }
+    }
+    ul li {
+      @include mq("tablet-wide") {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
     }
     ul li a {
       text-decoration: none;
@@ -254,7 +327,6 @@ header.main__navigation {
   left: 0;
   width: 100%;
   position: absolute;
-  border: 1px solid red;
   @include mq("tablet-wide") {
     display: none;
   }
@@ -305,6 +377,7 @@ header.main__navigation {
     top: 0;
     transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
       z-index 0s linear 0.01s;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
   }
 }
 .sub__menu__inner__wrapper {
@@ -384,18 +457,23 @@ header.main__navigation {
 }
 
 .sub__menu__level_one {
-  width: 33%;
+  width: 33.33%;
   position: relative;
   display: block;
   list-style: none;
   margin: 0;
+  padding-left: 0;
+  border-right: 1px solid #d9d9d9;
+  @include mq("tablet-wide") {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 li.has_sub_menu_level_two,
 li.has_sub_menu_level_three {
   display: flex;
   width: 100%;
-  justify-content: space-between;
-  align-items: end;
 }
 .sub__menu__level_two {
   position: absolute;
@@ -404,14 +482,31 @@ li.has_sub_menu_level_three {
   background-color: #fff;
   left: 100%;
   top: 0;
-  //border: 1px solid green;
   width: 100%;
-  padding: 3rem;
+  padding: 0 0 1rem 1rem;
   display: none;
+  @include mq("tablet-wide") {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 .sub__menu__level_two.is__active {
   display: block;
+  &::before {
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    margin-left: 0;
+    right: 50%;
+    margin-right: -50vw;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+  }
 }
 
 .sub__menu__level_three {
@@ -424,7 +519,13 @@ li.has_sub_menu_level_three {
   left: 100%;
   top: 0;
   height: 100%;
-  padding: 3rem;
+  padding: 0 0 1rem 1rem;
+  border-left: 1px solid #d9d9d9;
+  @include mq("tablet-wide") {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .sub__menu__level_three.is__active {
   display: block;
@@ -447,51 +548,53 @@ li.holder_page a {
   }
   > li {
     padding-bottom: 0.8rem;
-    padding-left: 3rem;
+    padding-left: 2rem;
     padding-top: 0.8rem;
     @include transition(0.2s ease);
     &:hover {
       background-color: $azure;
     }
   }
-  > li button {
+  > li > button {
     background-color: transparent;
     border: 0;
   }
   > li a,
   > li button {
-    display: inline-block;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  > li a,
-  > li button {
+  > li > a,
+  > li > button {
     &::after {
       content: "";
       display: block;
-      width: 100%;
+      width: calc(100% - 2rem);
       transform: scaleX(0);
       transform-origin: top left;
       transition: transform 0.5s ease;
       height: 2px;
-      margin-top: 4px;
+      margin-top: 7px;
       background: $cerulean;
     }
   }
   > li:hover {
-    a::after,
-    button::after {
+    > a::after,
+    > button::after {
       transform: scaleX(1);
     }
   }
-  > li:not(.holder_page):hover a,
-  > li:hover button {
+  > li:not(.holder_page):hover > a,
+  > li:hover > button {
     text-shadow: 0 0 0.65px #151d3e, 0 0 0.65px #151d3e;
   }
 }
-.sub__menu__level_one {
-  border-right: 1px solid #d9d9d9;
-}
+
 .sub__menu__level_two {
   border-right: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
 }
 .sub__menu__level_one a,
 .sub__menu__level_two a,
@@ -503,6 +606,10 @@ li.holder_page a {
   position: relative;
   text-decoration: none;
   display: block;
+  @media (max-width: 1200px) {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
 }
 
 .sub__menu__level_one button,
@@ -515,6 +622,10 @@ li.holder_page a {
   position: relative;
   text-decoration: none;
   display: block;
+  @media (max-width: 1200px) {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
 }
 
 .has_sub_menu_level_two.is__active,
@@ -538,16 +649,44 @@ li.holder_page a {
   @include transition(0.2s ease);
 }
 .divv {
+  @include transition(0.2s ease);
   width: 100%;
   height: 100%;
-  display: flex;
-  padding-top: 2.5rem;
-  @include transition(0.2s ease);
-  padding-top: 5rem;
-  padding-right: 4rem;
+  flex-wrap: wrap;
+  padding-top: 6rem;
   padding-left: 10rem;
+  padding-right: 0rem;
+  @media (max-width: 1200px) {
+    padding-left: 0rem;
+  }
 }
 // .sub__menu__main.is__active .divv {
 //   transform: translateY(0);
 //   opacity: 1;
 // }
+
+.container__main.menu__nav__cards {
+  position: absolute;
+  right: 0;
+  top: 7rem;
+  width: 65%;
+  @include mq("tablet-wide") {
+    display: none;
+  }
+}
+
+.mobile__menu {
+  display: none;
+  @include mq("tablet-wide") {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 5rem;
+    height: 5rem;
+    background-color: green;
+    border: none;
+    &.is-open {
+      background-color: red;
+    }
+  }
+}
