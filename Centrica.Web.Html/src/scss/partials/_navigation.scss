@@ -690,3 +690,29 @@ li.holder_page a {
     }
   }
 }
+
+
+@include mq("tablet-wide") {
+
+  .main__navigation .list-wrapper:nth-child(2),
+  .main__navigation .list-wrapper:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+  }
+
+  .main__navigation .list-wrapper:nth-child(2).is-visible,
+  .main__navigation .list-wrapper:nth-child(3).is-visible {
+    transform: none;
+  }
+
+  .main__navigation .list-wrapper:nth-child(1) > ul > li > .sub-menu,
+  .main__navigation .list-wrapper:nth-child(2) .level-3 {
+    display: none;
+  }
+
+}
