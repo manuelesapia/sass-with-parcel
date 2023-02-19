@@ -690,17 +690,16 @@ li.holder_page a {
 
 .menu-wrapper {
   display: none;
-
 }
 @include mq("tablet-wide") {
   .menu-wrapper {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 60px;
     left: 0;
     width: 100%;
     height: calc(100vh - 60px);
-    //overflow: hidden;
+    overflow: hidden;
     &::before {
       content: "";
       background-color: #fff;
@@ -718,16 +717,38 @@ li.holder_page a {
     }
   }
 
-  .list-wrapper ul{
+  .back-one-level {
+    background-color: transparent;
+    border: 0;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: $primary-blue;
+    @include regularFont();
+    padding: 0;
+    margin-bottom: 3rem;
+    &::before {
+      content: "";
+      margin-left: 0px;
+      padding: 1rem 0.5rem;
+      position: relative;
+      display: inline-block;
+      top: 0.5rem;
+      transform: rotate(180deg);
+      background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='10' viewBox='0 0 11 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6.0026 1.33337L9.66927 5.00004L6.0026 8.66671M9.33594 5.00004H0.335938' stroke='%230F2067' stroke-width='1.5'/%3e%3c/svg%3e ")
+        50% 50% no-repeat;
+    }
+  }
+
+  .list-wrapper ul {
     padding: 0;
     margin: 0;
   }
 
   .main__navigation .list-wrapper {
     height: 100%;
-    padding:0;
+    padding: 5rem 3rem;
     overflow-y: auto;
-    background:#fff;
+    background: #fff;
   }
   .main__navigation .menu-wrapper.is-visible {
     display: block;
@@ -753,8 +774,8 @@ li.holder_page a {
     display: none;
   }
 
-
-  .main__navigation .level-1 li a, .main__navigation .level-2 li a {
+  .main__navigation ul li a,
+  .main__navigation ul li button {
     font-size: 1.4rem;
     line-height: 2rem;
     color: $primary-blue;
@@ -764,50 +785,63 @@ li.holder_page a {
     display: block;
   }
 
-  .main__navigation .level-1, .main__navigation .level-2{
-    padding-bottom: 0.8rem;
-    padding-left: 2rem;
-    padding-top: 0.8rem;
+  .main__navigation .level-1,
+  .main__navigation .level-2,
+  .main__navigation .level-3 {
+    padding-bottom: 0;
+    padding-left: 0;
     @include transition(0.2s ease);
-    &:hover {
-      background-color: $azure;
+    > li > button {
+      background-color: transparent;
+      border: 0;
     }
-  }
-  > li > button {
-    background-color: transparent;
-    border: 0;
-  }
-  > li a,
-  > li button {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  > li > a,
-  > li > button {
-    &::after {
-      content: "";
+    li {
+      margin-bottom: 1rem;
+    }
+    > li button span {
+      position: absolute;
+      background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='20' viewBox='0 0 11 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.666016 1.33337L9.33268 10L0.666016 18.6667' stroke='%230F2067' stroke-width='1.5'/%3e%3c/svg%3e ")
+        no-repeat 50% 50%;
+      padding: 1rem;
+      right: 2rem;
       display: block;
-      width: calc(100% - 2rem);
-      transform: scaleX(0);
-      transform-origin: top left;
-      transition: transform 0.5s ease;
-      height: 2px;
-      margin-top: 7px;
-      background: $cerulean;
+      top: 50%;
+      transform: translateY(-50%);
+      @include transition(0.2s ease);
     }
-  }
-  > li:hover {
-    > a::after,
-    > button::after {
-      transform: scaleX(1);
+    > li a,
+    > li button {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0;
     }
+    > li > a,
+    > li > button {
+      &::after {
+        content: "";
+        display: block;
+        width: calc(100% - 2rem);
+        transform: scaleX(0);
+        transform-origin: top left;
+        transition: transform 0.5s ease;
+        height: 2px;
+        margin-top: 7px;
+        background: $cerulean;
+      }
+    }
+    > li:hover {
+      > a::after,
+      > button::after {
+        transform: scaleX(1);
+      }
+    }
+    .holder_page a {
+    }
+    // > li:not(.holder_page):hover > a,
+    // > li:hover > button {
+    //   text-shadow: 0 0 0.65px #151d3e, 0 0 0.65px #151d3e;
+    // }
   }
-  > li:not(.holder_page):hover > a,
-  > li:hover > button {
-    text-shadow: 0 0 0.65px #151d3e, 0 0 0.65px #151d3e;
-  }
-
 }
-
