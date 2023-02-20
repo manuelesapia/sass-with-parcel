@@ -660,10 +660,6 @@ li.holder_page a {
     padding-left: 0rem;
   }
 }
-// .sub__menu__main.is__active .divv {
-//   transform: translateY(0);
-//   opacity: 1;
-// }
 
 .container__main.menu__nav__cards {
   position: absolute;
@@ -681,10 +677,27 @@ li.holder_page a {
     display: block;
     position: absolute;
     left: 0;
-    width: 5rem;
-    height: 5rem;
-    background-color: green;
+    padding-left: 0;
+    width: 7rem;
+    height: 2.5rem;
+    background-color: transparent;
     border: none;
+    @include transition(0.3s ease);
+    span {
+      @include transition(0.3s ease);
+      padding: 1rem 1rem;
+      background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='16' viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 1H24M0 8H24M0 15H24' stroke='%230F2067' stroke-width='1.5'/%3e%3c/svg%3e")
+        no-repeat 50% 50%;
+      margin-right: 1rem;
+    }
+    &.is-visible {
+      span {
+        padding: 1rem 1rem;
+        background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.75 0.875L9.79167 9.91677M9.79167 9.91677L18.8333 18.9583M9.79167 9.91677L18.8333 0.875M9.79167 9.91677L0.75 18.9583' stroke='%230F2067' stroke-width='1.5'/%3e%3c/svg%3e ")
+          no-repeat 50% 50%;
+        margin-right: 1rem;
+      }
+    }
   }
 }
 
@@ -700,17 +713,17 @@ li.holder_page a {
     width: 100%;
     height: calc(100vh - 60px);
     overflow: hidden;
+    background-color: #fff;
     &::before {
       content: "";
-      background-color: #fff;
+      background-color: #e7ffff;
       position: absolute;
-      width: 100vw;
-      left: 50%;
+      width: 20vw;
       margin-left: -50vw;
       right: 50%;
       margin-right: -50vw;
       height: 100%;
-      z-index: -1;
+      z-index: 0;
       top: 0;
       transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
         z-index 0s linear 0.01s;
@@ -749,12 +762,27 @@ li.holder_page a {
     padding: 5rem 3rem;
     overflow-y: auto;
     background: #fff;
+    &::before {
+      content: "";
+      background-color: #e7ffff;
+      position: absolute;
+      width: 20vw;
+      margin-left: -50vw;
+      right: 50%;
+      margin-right: -50vw;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
+        z-index 0s linear 0.01s;
+    }
   }
   .main__navigation .menu-wrapper.is-visible {
     display: block;
   }
   .main__navigation .list-wrapper:nth-child(2),
-  .main__navigation .list-wrapper:nth-child(3) {
+  .main__navigation .list-wrapper:nth-child(3),
+  .main__navigation .list-wrapper:nth-child(4) {
     position: absolute;
     top: 0;
     left: 0;
@@ -765,12 +793,14 @@ li.holder_page a {
   }
 
   .main__navigation .list-wrapper:nth-child(2).is-visible,
-  .main__navigation .list-wrapper:nth-child(3).is-visible {
+  .main__navigation .list-wrapper:nth-child(3).is-visible,
+  .main__navigation .list-wrapper:nth-child(4).is-visible {
     transform: none;
   }
 
   .main__navigation .list-wrapper:nth-child(1) > ul > li > .sub-menu,
-  .main__navigation .list-wrapper:nth-child(2) .level-3 {
+  .main__navigation .list-wrapper:nth-child(2) .level-3,
+  .main__navigation .list-wrapper:nth-child(3) .level-4 {
     display: none;
   }
 
@@ -787,7 +817,8 @@ li.holder_page a {
 
   .main__navigation .level-1,
   .main__navigation .level-2,
-  .main__navigation .level-3 {
+  .main__navigation .level-3,
+  .main__navigation .level-4 {
     padding-bottom: 0;
     padding-left: 0;
     @include transition(0.2s ease);
@@ -797,6 +828,7 @@ li.holder_page a {
     }
     li {
       margin-bottom: 1rem;
+      width: 80%;
     }
     > li button span {
       position: absolute;
@@ -838,10 +870,7 @@ li.holder_page a {
       }
     }
     .holder_page a {
+      @include boldFontforHeadingsh3h4h5();
     }
-    // > li:not(.holder_page):hover > a,
-    // > li:hover > button {
-    //   text-shadow: 0 0 0.65px #151d3e, 0 0 0.65px #151d3e;
-    // }
   }
 }

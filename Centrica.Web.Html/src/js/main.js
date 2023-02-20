@@ -30,17 +30,39 @@ var navigationMobile = {
       const listWrapper3 = pageHeader.querySelector(
         ".list-wrapper:nth-child(3)"
       );
+      const listWrapper4 = pageHeader.querySelector(
+        ".list-wrapper:nth-child(4)"
+      );
       const subMenuWrapper2 = listWrapper2.querySelector(".sub-menu-wrapper");
       const subMenuWrapper3 = listWrapper3.querySelector(".sub-menu-wrapper");
+      const subMenuWrapper4 = listWrapper4.querySelector(".sub-menu-wrapper");
       const backOneLevelBtns = pageHeader.querySelectorAll(".back-one-level");
       const isVisibleClass = "is-visible";
       const isActiveClass = "is-active";
+      const search = document.querySelector(".icon__search");
+
+      search.addEventListener("click", function () {
+        search.classList.toggle("is-open");
+        document
+          .querySelector(".search__navigation")
+          .classList.toggle("is-open");
+        if (search.className.includes("is-open")) {
+          menuWrapper.classList.remove(isVisibleClass);
+          toggleMenu.classList.remove(isVisibleClass);
+        }
+      });
 
       toggleMenu.addEventListener("click", function () {
+        toggleMenu.classList.toggle(isVisibleClass);
         menuWrapper.classList.toggle(isVisibleClass);
         if (!this.classList.contains(isVisibleClass)) {
           listWrapper2.classList.remove(isVisibleClass);
           listWrapper3.classList.remove(isVisibleClass);
+          listWrapper4.classList.remove(isVisibleClass);
+          search.classList.remove("is-open");
+          document
+            .querySelector(".search__navigation")
+            .classList.remove("is-open");
           const menuLinks = menuWrapper.querySelectorAll("button");
           for (const menuLink of menuLinks) {
             menuLink.classList.remove(isActiveClass);
@@ -75,6 +97,21 @@ var navigationMobile = {
           subMenuWrapper3.innerHTML = "";
           subMenuWrapper3.append(cloneSiblingList);
           listWrapper3.classList.add(isVisibleClass);
+        }
+      });
+      listWrapper3.addEventListener("click", function (e) {
+        const target = e.target;
+        if (
+          target.tagName.toLowerCase() === "button" &&
+          target.nextElementSibling
+        ) {
+          const siblingList = target.nextElementSibling;
+          e.preventDefault();
+          target.classList.add(isActiveClass);
+          const cloneSiblingList = siblingList.cloneNode(true);
+          subMenuWrapper4.innerHTML = "";
+          subMenuWrapper4.append(cloneSiblingList);
+          listWrapper4.classList.add(isVisibleClass);
         }
       });
 
