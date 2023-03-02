@@ -1,0 +1,162 @@
+@import "./palette";
+@import "./mixins";
+
+.carousel_2023_wrapper_news{
+    min-height: auto;
+    width: 100%;
+    outline: none;
+    &.is_not_active {
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+        align-items: stretch;
+    }
+    &.is_not_active {
+    .carousel_2023_item_news{
+        flex: 2;
+        max-width:50%;
+        @include mq("tablet-wide") {
+            max-width:100%;    
+            flex: auto;
+            }
+        }
+    }
+    .carousel_2023_item_news{
+        width:33.33%;
+        text-decoration: none;
+        @include mq("tablet-wide") {
+            width:100%;    
+        }
+        &:hover{
+            img{
+                transform: scale(1.1);
+            }
+        }
+     }  
+  
+     .image__main{
+        overflow: hidden;
+     }
+
+    .image__main p{
+        position:absolute;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 32, 103, 0.9);
+        width: max-content;
+        text-transform: uppercase;
+        color: #fff;
+        bottom: 0;
+        margin: 0;
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+        padding: .7rem;
+        span{
+            margin-right: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background:url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.83687 3.83338H4.97688C5.95021 3.83338 6.89687 4.18672 7.63021 4.84005L7.99021 5.16005L8.35021 4.83338C9.07688 4.18005 10.0235 3.82005 11.0035 3.82005H13.1435V11.48H10.9969C10.0169 11.48 9.07021 11.8334 8.33687 12.4867L7.97021 12.8067L7.60354 12.48C6.87021 11.8267 5.92354 11.4667 4.94354 11.4667H2.79688V3.80005L2.83687 3.83338Z' stroke='white'/%3e%3cpath d='M8 12.8334V5.16675' stroke='white'/%3e%3c/svg%3e ") no-repeat 50% 50%;
+        }
+    }
+    .carousel_2023_item_news p.tag_category{
+        margin: 0;
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+        color: $primary-blue;
+        @include microLightFont();
+        width: max-content;
+        background-color:#E7FFFF;
+        padding: .8rem;
+        } 
+    }
+
+.carousel_2023_wrapper{
+    min-height: 450px;
+    width: 100%;
+    outline: none;
+    margin-bottom: 2rem;
+    &.is_not_active {
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+        align-items: stretch;
+    }
+    &.is_not_active{
+    .carousel_2023_item{
+    flex: 2;
+    max-width:50%;
+    @include mq("tablet-wide") {
+        max-width:100%;    
+        flex: auto;
+        }
+     }
+    }
+     .carousel_2023_item{
+        width:33.33%;
+        @include mq("tablet-wide") {
+            width:100%;
+        }
+    }
+ 
+}
+
+
+.flickity-enabled{
+    button.flickity-button svg{
+        display: none;
+    }
+    button.flickity-button.flickity-prev-next-button.previous {
+        padding: 3rem;
+        background-color: transparent;
+        border: none;
+        background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect x='48' y='48' width='48' height='48' rx='24' transform='rotate(-180 48 48)' fill='%230F2067'/%3e%3cpath d='M26.3962 17.7598L20.1562 23.9998L26.3962 30.2398' stroke='white' stroke-width='2'/%3e%3crect x='48' y='48' width='48' height='48' rx='24' transform='rotate(-180 48 48)' stroke='%230F2067'/%3e%3c/svg%3e") no-repeat 50% 50%;
+    }
+
+    button.flickity-button.flickity-prev-next-button.next {
+        padding: 3rem;
+        transform: rotate(180deg);
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        right: 3rem;
+        background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect x='48' y='48' width='48' height='48' rx='24' transform='rotate(-180 48 48)' fill='%230F2067'/%3e%3cpath d='M26.3962 17.7598L20.1562 23.9998L26.3962 30.2398' stroke='white' stroke-width='2'/%3e%3crect x='48' y='48' width='48' height='48' rx='24' transform='rotate(-180 48 48)' stroke='%230F2067'/%3e%3c/svg%3e") no-repeat 50% 50%;
+    }
+    .flickity-prev-next-button:disabled { 
+        display: none; 
+    }
+    ol.flickity-page-dots {
+        padding-left: 0;
+        position: relative;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    ol.flickity-page-dots li {
+        width:12px;
+        height:12px;
+        background: #E0E0E0;
+        margin-right: 1rem; 
+        border-radius: 50%;
+        transition:400ms;
+        cursor: pointer;
+        &.is-selected{
+            background: #0F2067;
+            width:58px;
+            border-radius: 39px;
+        }
+        &::marker{
+            content: "";
+        }
+    }
+    .flickity-viewport {
+        overflow: hidden;
+        position: relative;
+    }
+}
+
+
+

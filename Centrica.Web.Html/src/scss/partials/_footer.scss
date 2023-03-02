@@ -18,7 +18,7 @@
     top: 0;
   }
 }
-footer h5.footer-heading-h5 {
+footer .h5_heading {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   position: relative;
@@ -37,7 +37,8 @@ footer h5.footer-heading-h5 {
 }
 
 footer {
-  p {
+  p,
+  .rte_main p {
     @include regularFont();
   }
   ul {
@@ -86,6 +87,9 @@ footer {
         background-color: $primary-white;
       }
     }
+    &::after {
+        display: none;
+    }
     span {
       position: absolute;
       top: 0;
@@ -106,7 +110,24 @@ footer {
     text-decoration: none;
     color: $primary-blue;
     font-size: 1.5rem;
+    display: inline-block;
     line-height: 2.2rem;
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: top left;
+      transition: transform 0.5s ease;
+      height: 2px;
+      background: $primary-blue;
+      margin-bottom: -2px;
+    }
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
   }
   .site-copyrights p {
     margin-top: 0;

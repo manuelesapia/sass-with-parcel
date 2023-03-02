@@ -5,6 +5,11 @@
 @import "modules/_palette.scss";
 @import "modules/mixins";
 @import "modules/typography";
+@import "modules/carousel";
+@import "modules/cards";
+@import "modules/tabs";
+@import "modules/accordions";
+@import "modules/banner";
 
 //partials
 @import "partials/_fonts.scss";
@@ -12,11 +17,8 @@
 @import "partials/_footer.scss";
 @import "partials/icons";
 @import "partials/imported_news";
-
 //views
-
 //@import "views/_enabler-map-block.scss";
-
 @import "views/_careers-page-2022.scss";
 @import "views/_annual-report-2020.scss";
 @import "views/_annual-report-2021.scss";
@@ -31,6 +33,9 @@ body {
 }
 main {
   padding-top: 110px;
+  @include mq("tablet-wide") {
+    padding-top: 62px;
+  }
 }
 * {
   -webkit-box-sizing: border-box;

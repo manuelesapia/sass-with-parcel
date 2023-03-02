@@ -1,6 +1,7 @@
-const jQuery = require("jquery");
-window.$ = window.jQuery = jQuery;
+
 const Flickity = require("flickity");
+// const jQuery = require("jquery");
+// window.$ = window.jQuery = jQuery;
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox.css";
 var isModernBrowser = false;
@@ -16,7 +17,41 @@ function preCheck() {
 function init() {
   navigationDesktop.init();
   navigationMobile.init();
+  accordions2023.init();
 }
+var accordions2023 = {
+  init: function () {
+    const accordions = document.querySelectorAll(".accordion_2023");
+
+    const openAccordion = (accordion) => {
+      const content = accordion.querySelector(".accordion__content");
+      accordion.classList.add("accordion__active");
+      content.style.maxHeight = "100%";
+    };
+    
+    const closeAccordion = (accordion) => {
+      const content = accordion.querySelector(".accordion__content");
+      accordion.classList.remove("accordion__active");
+      content.style.maxHeight = null;
+    };
+    
+    accordions.forEach((accordion) => {
+      const intro = accordion.querySelector(".accordion__intro");
+      const content = accordion.querySelector(".accordion__content");
+    
+      intro.onclick = () => {
+        if (content.style.maxHeight) {
+          closeAccordion(accordion);
+        } else {
+          accordions.forEach((accordion) => closeAccordion(accordion));
+          openAccordion(accordion);
+        }
+      };
+    });
+    
+  },
+};
+
 var navigationMobile = {
   init: function () {
     if (window.innerWidth < 1024) {
@@ -49,24 +84,29 @@ var navigationMobile = {
         if (search.className.includes("is-open")) {
           menuWrapper.classList.remove(isVisibleClass);
           toggleMenu.classList.remove(isVisibleClass);
+          toggleMenu.innerText = "Menu";
         }
       });
 
       toggleMenu.addEventListener("click", function () {
-        toggleMenu.classList.toggle(isVisibleClass);
         menuWrapper.classList.toggle(isVisibleClass);
+        search.classList.remove("is-open");
+        document
+          .querySelector(".search__navigation")
+          .classList.remove("is-open");
         if (!this.classList.contains(isVisibleClass)) {
+          toggleMenu.innerText = "Close";
+          toggleMenu.classList.add(isVisibleClass);
           listWrapper2.classList.remove(isVisibleClass);
           listWrapper3.classList.remove(isVisibleClass);
           listWrapper4.classList.remove(isVisibleClass);
-          search.classList.remove("is-open");
-          document
-            .querySelector(".search__navigation")
-            .classList.remove("is-open");
           const menuLinks = menuWrapper.querySelectorAll("button");
           for (const menuLink of menuLinks) {
             menuLink.classList.remove(isActiveClass);
           }
+        } else {
+          toggleMenu.innerText = "Menu";
+          toggleMenu.classList.remove(isVisibleClass);
         }
       });
 
@@ -133,40 +173,32 @@ var navigationDesktop = {
     if (window.innerWidth > 1024) {
       const openMenu = document.querySelectorAll(".main__menu__item__holder");
       const closeMenu = document.querySelectorAll(".close__nav");
+      const closeMenuBottom = document.querySelectorAll(".close__nav__bottom");
       const search = document.querySelector(".icon__search");
       const openLeveltwo = document.querySelectorAll(".has_sub_menu_level_two");
-      const openLevelthree = document.querySelectorAll(
-        ".has_sub_menu_level_three"
-      );
+      const openLevelthree = document.querySelectorAll(".has_sub_menu_level_three");
       const sub__menu__main = document.querySelectorAll(".sub__menu__main");
 
-      // top menu items
       for (const [elemIndex, elem] of openMenu.entries()) {
         elem.addEventListener("click", function () {
-          for (const element of openMenu) {
+          for (const element of openMenu) { 
+            //console.log(path);
             if (element === elem && !element.classList.contains("is__active")) {
               element.classList.add("is__active");
-              for (const item of element.parentElement.querySelectorAll(
-                ".sub__menu__main .is__active"
-              )) {
+            
+              document.querySelector(".search__navigation").classList.remove("is-open");
+              element.parentElement.querySelector(".close__nav").classList.remove("is__active");
+              search.classList.remove("is-open");
+              for (const item of element.parentElement.querySelectorAll(".sub__menu__main .is__active")) {
                 item.classList.remove("is__active");
               }
-              document
-                .querySelector(".search__navigation")
-                .classList.remove("is-open");
-              element.parentElement
-                .querySelector(".close__nav")
-                .classList.remove("is__active");
-              search.classList.remove("is-open");
             } else {
               element.classList.remove("is__active");
             }
           }
 
           for (const [index, megaMenu] of sub__menu__main.entries()) {
-            if (
-              index == elemIndex &&
-              !megaMenu.classList.contains("is__active")
+            if (index == elemIndex && !megaMenu.classList.contains("is__active")
             ) {
               megaMenu.classList.add("is__active");
             } else {
@@ -232,8 +264,24 @@ var navigationDesktop = {
           }
         });
       }
-      // search button
 
+      // close bottom menu button
+      for (const closeButton of closeMenuBottom) {
+        closeButton.addEventListener("click", function () {
+          closeButton.classList.toggle("is__active");
+          if (closeButton.className.includes("is__active")) {
+            closeButton
+              .closest(".sub__menu__main")
+              .classList.remove("is__active");
+            closeButton
+              .closest(".main__menu__item")
+              .querySelector(".main__menu__item__holder")
+              .classList.remove("is__active");
+          }
+        });
+      }
+
+      // search button
       search.addEventListener("click", function () {
         search.classList.toggle("is-open");
         document

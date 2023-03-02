@@ -424,13 +424,8 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-
   &.center {
     text-align: center;
-  }
-  &:has(.image__main) {
-    padding-right: 0;
-    padding-left: 0;
   }
 }
 

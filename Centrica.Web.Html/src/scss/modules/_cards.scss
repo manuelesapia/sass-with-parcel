@@ -1,0 +1,64 @@
+@import "./palette";
+@import "./mixins";
+
+.simple__text__cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    h4{
+    color: $primary-blue;
+    font-size: 2.2rem;
+    line-height: 3rem;
+    @include lightFont();
+    }
+}
+
+
+.link__list__2023{
+    a.download__link::before {
+        content: "";
+        padding:0 1rem;
+        margin-right: 0.7rem;
+        background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='17' viewBox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.14648 11.1668V15.771H16.8548V11.1668M12.7923 7.37516L9.00065 11.1668M9.00065 11.1668L5.20898 7.37516M9.00065 11.1668V0.333496' stroke='%230F2067' stroke-width='2'/%3e%3c/svg%3e ") no-repeat 50% 50%;
+      }
+      .button__primary__main{
+        a.download__link::before {
+          content: "";
+          padding:0 1rem;
+          margin-right: 0.7rem;
+          background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='17' viewBox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.14648 11.1668V15.771H16.8548V11.1668M12.7923 7.37516L9.00065 11.1668M9.00065 11.1668L5.20898 7.37516M9.00065 11.1668V0.333496' stroke='%23ffffff' stroke-width='2'/%3e%3c/svg%3e ") no-repeat 50% 50%;
+        }
+      }
+    ul{
+        padding: 0;
+        margin: 0;
+        margin-bottom:5rem;
+    }
+    ul li{
+        padding: 3rem 0;
+        border-bottom: 0.5px solid $primary-blue;
+    }
+    ul li a{
+        font-size: 2.2rem;
+        line-height: 2.5rem;
+        @include boldFontforHeadings();
+        color: $primary-blue;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        &::after {
+            content: "";
+            width: 100%;
+            transform-origin: 0 0;
+            height: 2px;
+            background: #0f2067;
+            margin-bottom: -2px;
+            transition: transform .5s;
+            display: block;
+            transform: scaleX(0);
+        }
+        &:hover::after{
+            transform: scaleX(100%);
+        }
+    }
+}

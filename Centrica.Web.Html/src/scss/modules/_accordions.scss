@@ -1,0 +1,140 @@
+@import "./palette";
+@import "./mixins";
+
+
+.accordions_wrapper_2023 .accordion_2023 {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 2.4rem;
+	background-color:$azure;
+    h2{
+        margin-bottom: 0;
+        display: inline-block;
+        position: relative;
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          transform: scaleX(0);
+          transform-origin: top left;
+          transition: transform 0.5s ease;
+          height: 2px;
+          background: $primary-blue;
+          margin-bottom: -2px;
+        }
+    }
+    .plus{
+      transition: all 0.25s ease-out;
+      border-bottom: 1px solid $primary-blue;
+      width:20px;
+      position: absolute;
+      left:1rem;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+	.accordion__intro {
+		position: relative;
+		padding: 2.4rem 5rem;
+		cursor: pointer;
+    transition: all 0.25s ease-out;
+    &:hover{
+      background:#F3FFFF;
+      h2::after{
+        transform: scaleX(100%);
+      }
+    }
+	}
+	.accordion__content {
+		max-height: 0;
+		overflow: hidden;
+		transition: all 0.25s ease-out;
+		opacity: 0;
+    background-color: #fff;
+	}
+	&.accordion__active {
+		.accordion__content {
+			opacity: 1;
+      max-height: 100%;
+      padding:1rem 0;
+		}
+        
+    .plus {
+        width:25px;
+        height:25px;
+        position: absolute;
+        left:1rem;
+        transform: translateY(-50%);
+        top: 50%;
+        border-bottom: none;
+      }
+      
+      .plus:before,
+      .plus:after {
+        content: "";
+        position:absolute;
+        background:#0F2067;
+      }
+      
+      .plus:before {
+        left:50%;
+        top:4px;
+        bottom:4px;
+        width:1px;
+        transform:translateX(-50%);
+      }
+      
+      .plus:after {
+        top:50%;
+        left:4px;
+        right:4px;
+        height:1px;
+        transform:translateY(-50%);
+      }
+	}
+  
+    .header__row{
+        border-bottom: .5px solid $primary-blue;
+        h3{
+           font-size: 1.3rem;
+           line-height: 1.5rem; 
+           @include microLightFont();
+           text-transform: uppercase;
+        }
+    }
+    .row__main{
+        margin-top:2rem;
+    }
+    .row__main h4{
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        @include regularFont();
+    }
+    a.external__link,
+    a.download__link,
+    a.internal__link {
+      @include boldFontforHeadingsh3h4h5();
+      text-decoration: none;
+      color: $primary-blue;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      display:inline-block;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: top left;
+        transition: transform 0.5s ease;
+        height: 2px;
+        background: $primary-blue;
+        margin-bottom: -2px;
+      }
+      &:hover {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+}
+

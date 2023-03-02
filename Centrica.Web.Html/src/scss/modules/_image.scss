@@ -1,3 +1,4 @@
+@import "../partials/_fonts.scss";
 .image__main {
   position: relative;
   &.l-grid {
@@ -6,7 +7,112 @@
   &.menu {
     min-height: 213px;
   }
+  &.banner-xl {
+    min-height: 600px;
+      @media (max-width:1300px) {
+        min-height: 500px;
+      }
+      @include mq("phone") {
+        min-height: 350px;
+      }
+   }
+  &.image_colspan_12 {
+    min-height: 650px;
+    @include mq("phone") {
+      min-height: 350px;
+    }
+  }
+  &.image_colspan_11 {
+    min-height: 600px;
+    @include mq("phone") {
+      min-height: 350px;
+    }
+  }
+  &.image_colspan_10 {
+    min-height: 550px;
+    @include mq("phone") {
+      min-height: 350px;
+    }
+  }
+
+  &.image_colspan_9 {
+    min-height: 500px;
+    @include mq("phone") {
+      min-height: 350px;
+    }
+  }
+  &.image_colspan_8 {
+    min-height: 450px;
+    @include mq("phone") {
+      min-height: 350px;
+    }
+  }
+  &.image_colspan_7 {
+    min-height: 400px;
+    @include mq("phone") {
+      min-height: 350px;
+    }
+  }
+  &.image_colspan_6 {
+    min-height: 350px;
+    @include mq("phone") {
+      min-height: 300px;
+    }
+  }
+
+  &.image_colspan_5 {
+    min-height: 300px;
+    @include mq("phone") {
+      min-height: 250px;
+    }
+  }
+
+  &.image_colspan_4 {
+    min-height: 250px;
+    @include mq("phone") {
+      min-height: 200px;
+    }
+  }
+
+  &.image_colspan_3 {
+    min-height: 340px;
+    @include mq("phone") {
+      min-height: 200px;
+    }
+  }
+
+  &.image_colspan_2 {
+    min-height: 150px;
+  }
+
+  &.image_colspan_2 {
+    min-height: 100px;
+  }
+
+  &.image__news {
+    min-height:215px;
+  }
+  .image__main__caption{
+      @include regularFont();
+      bottom: 0;
+      background-color:$azure;
+      padding: 1.8rem;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+      width: 100%;
+      margin: 0;
+      position: absolute;
+  }
 }
+.umb-block-grid__layout-item[data-col-span="9"] .image__main.image_colspan_9 {
+    min-height: 650px;
+    @include mq("phone") {
+      min-height: 350px;
+    }
+}
+
+
+
 
 //used only for annual-report-2020
 
@@ -310,4 +416,5 @@ img.fit-cover {
 img {
   max-width: 100%;
   display: block;
+  transition: 0.5s ease-in-out;
 }
