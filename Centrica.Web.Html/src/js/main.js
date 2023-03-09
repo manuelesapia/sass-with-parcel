@@ -22,38 +22,19 @@ function init() {
 var accordions2023 = {
   init: function () {
     const accordions = document.querySelectorAll(".accordion_2023");
-    const accordionsOneByOne = document.querySelectorAll(".open_close_one_by_one");
-  
-    for (const accordionsOneByOneItem of accordionsOneByOne) {
-      const parent = accordionsOneByOneItem.children;
-      const article = accordionsOneByOneItem.children.nextElementSibling;
-    
-      const intro = accordionsOneByOneItem.querySelector(".accordion__intro");
-      intro.onclick = () => {
-        if (!parent.classList.contains('accordion__active')) {
-          parent.classList.add('accordion__active');
-          article.style.maxHeight = article.scrollHeight + 'px';
-        }
-        else {
-          parent.classList.remove('accordion__active');
-          article.style.maxHeight = '0px';
-        }
-    }
-   
-    }
- 
     const openAccordion = (accordion) => {
       const content = accordion.querySelector(".accordion__content");
       accordion.classList.add("accordion__active");
       content.style.maxHeight = content.scrollHeight + "px";
+      const elementPosition = accordion.getBoundingClientRect().top - document.body.getBoundingClientRect().top - 100;
+      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
     };
     
     const closeAccordion = (accordion) => {
       const content = accordion.querySelector(".accordion__content");
       accordion.classList.remove("accordion__active");
       content.style.maxHeight = null;
-    };
-   
+    }; 
 
     accordions.forEach((accordion) => {
       const closeOpenAll = document.querySelector(".close_all_accordion_2023 p");
@@ -64,7 +45,9 @@ var accordions2023 = {
         if (content.style.maxHeight) {
           closeAccordion(accordion);
         } else {
-          accordions.forEach((accordion) => closeAccordion(accordion));
+          if(!accordion.classList.contains("open_close_one_by_one")){
+            accordions.forEach((accordion) => closeAccordion(accordion));
+          }
           openAccordion(accordion);
         }
       };
@@ -248,17 +231,25 @@ var navigationDesktop = {
 
       // level two
       for (const [levelTwoIndex, levelTwo] of openLeveltwo.entries()) {
+      const menu__nav__cards = levelTwo.closest('.main__menu__item').querySelector('.menu__nav__cards')
+
         levelTwo.querySelector("button").addEventListener("click", function () {
-          for (const [levelTwoIndexItem, levelTwoItem] of document
-            .querySelectorAll(".sub__menu__level_two").entries()) {
+          for (const [levelTwoIndexItem, levelTwoItem] of document.querySelectorAll(".sub__menu__level_two").entries()) {
             if (levelTwoIndexItem == levelTwoIndex && !levelTwoItem.classList.contains("is__active")) {
               levelTwoItem.classList.add("is__active");
-            } else {
+              menu__nav__cards.style.visibility = "hidden";
+            }
+            else if (levelTwoIndexItem == levelTwoIndex && levelTwoItem.classList.contains("is__active")){
+              menu__nav__cards.style.visibility = "visible";
               levelTwoItem.classList.remove("is__active");
-
               for (const [levelThreeIndexItem, levelThreeItem] of document.querySelectorAll(".sub__menu__level_three").entries()) {
                 levelThreeItem.classList.remove("is__active");
-
+              }
+            }  
+            else {
+              levelTwoItem.classList.remove("is__active");
+              for (const [levelThreeIndexItem, levelThreeItem] of document.querySelectorAll(".sub__menu__level_three").entries()) {
+                levelThreeItem.classList.remove("is__active");
               }
             }
           }
@@ -267,6 +258,7 @@ var navigationDesktop = {
 
       //level three
       for (const [levelThreeIndex, levelThree] of openLevelthree.entries()) {
+        
         levelThree.addEventListener("click", function () {
           for (const [levelThreeIndexItem, levelThreeItem] of document
             .querySelectorAll(".sub__menu__level_three")
@@ -285,11 +277,13 @@ var navigationDesktop = {
 
       // close menu button
       for (const closeButton of closeMenu) {
+        const menu__nav__cards = closeButton.closest('.main__menu__item').querySelector('.menu__nav__cards')
+
         closeButton.addEventListener("click", function () {
           closeButton.classList.toggle("is__active");
-          if (closeButton.className.includes("is__active")) {
+          if (closeButton.className.includes("is__active")) { 
             mainMenuNav.classList.remove("is__active");
-
+            menu__nav__cards.style.visibility = "visible";
             closeButton
               .closest(".sub__menu__main")
               .classList.remove("is__active");
@@ -325,6 +319,7 @@ var navigationDesktop = {
       });
       // search button
       search.addEventListener("click", function () {
+
         search.classList.toggle("is-open");
         document.querySelector(".search__navigation").classList.toggle("is-open");
         if (search.className.includes("is-open")) {
@@ -334,7 +329,13 @@ var navigationDesktop = {
             menu.classList.remove("is__active");
           })
           document.querySelectorAll(".main__menu__item__holder.is__active").forEach(menu => {
-            menu.classList.remove("is__active");})
+            menu.classList.remove("is__active");
+          
+
+          })
+         document.querySelectorAll('.menu__nav__cards').forEach(menu__nav__cards => {
+            menu__nav__cards.style.visibility = "visible";
+         });
         }
       });
     }
