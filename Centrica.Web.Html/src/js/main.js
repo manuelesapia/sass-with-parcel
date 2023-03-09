@@ -22,11 +22,30 @@ function init() {
 var accordions2023 = {
   init: function () {
     const accordions = document.querySelectorAll(".accordion_2023");
-
+    const accordionsOneByOne = document.querySelectorAll(".open_close_one_by_one");
+  
+    for (const accordionsOneByOneItem of accordionsOneByOne) {
+      const parent = accordionsOneByOneItem.children;
+      const article = accordionsOneByOneItem.children.nextElementSibling;
+    
+      const intro = accordionsOneByOneItem.querySelector(".accordion__intro");
+      intro.onclick = () => {
+        if (!parent.classList.contains('accordion__active')) {
+          parent.classList.add('accordion__active');
+          article.style.maxHeight = article.scrollHeight + 'px';
+        }
+        else {
+          parent.classList.remove('accordion__active');
+          article.style.maxHeight = '0px';
+        }
+    }
+   
+    }
+ 
     const openAccordion = (accordion) => {
       const content = accordion.querySelector(".accordion__content");
       accordion.classList.add("accordion__active");
-      content.style.maxHeight = "100%";
+      content.style.maxHeight = content.scrollHeight + "px";
     };
     
     const closeAccordion = (accordion) => {
@@ -34,17 +53,28 @@ var accordions2023 = {
       accordion.classList.remove("accordion__active");
       content.style.maxHeight = null;
     };
-    
+   
+
     accordions.forEach((accordion) => {
+      const closeOpenAll = document.querySelector(".close_all_accordion_2023 p");
       const intro = accordion.querySelector(".accordion__intro");
       const content = accordion.querySelector(".accordion__content");
-    
+      closeOpenAll.innerText ="Expand all";
       intro.onclick = () => {
         if (content.style.maxHeight) {
           closeAccordion(accordion);
         } else {
           accordions.forEach((accordion) => closeAccordion(accordion));
           openAccordion(accordion);
+        }
+      };
+      closeOpenAll.onclick = () => {
+        if (content.style.maxHeight) {
+          accordions.forEach((accordion) => closeAccordion(accordion));
+          closeOpenAll.innerText ="Expand all";
+        } else {
+          accordions.forEach((accordion) => openAccordion(accordion));
+          closeOpenAll.innerText ="Collapse all";
         }
       };
     });
@@ -168,13 +198,16 @@ var navigationMobile = {
   },
 };
 
+
 var navigationDesktop = {
   init: function () {
     if (window.innerWidth > 1024) {
-      const openMenu = document.querySelectorAll(".main__menu__item__holder");
+      const openMenu = document.querySelectorAll(".main__menu__item__holder__nested");
+      const mainMenuNav = document.querySelector(".main__menu")
       const closeMenu = document.querySelectorAll(".close__nav");
       const closeMenuBottom = document.querySelectorAll(".close__nav__bottom");
       const search = document.querySelector(".icon__search");
+      const closeSearch = document.querySelector(".close__search_2023");
       const openLeveltwo = document.querySelectorAll(".has_sub_menu_level_two");
       const openLevelthree = document.querySelectorAll(".has_sub_menu_level_three");
       const sub__menu__main = document.querySelectorAll(".sub__menu__main");
@@ -182,25 +215,30 @@ var navigationDesktop = {
       for (const [elemIndex, elem] of openMenu.entries()) {
         elem.addEventListener("click", function () {
           for (const element of openMenu) { 
-            //console.log(path);
             if (element === elem && !element.classList.contains("is__active")) {
               element.classList.add("is__active");
-            
+              mainMenuNav.classList.add("is__active");
               document.querySelector(".search__navigation").classList.remove("is-open");
               element.parentElement.querySelector(".close__nav").classList.remove("is__active");
               search.classList.remove("is-open");
+
               for (const item of element.parentElement.querySelectorAll(".sub__menu__main .is__active")) {
                 item.classList.remove("is__active");
               }
-            } else {
+            } else if (element === elem && element.classList.contains("is__active")) {
+              mainMenuNav.classList.remove("is__active");
               element.classList.remove("is__active");
+            }
+            else {
+              element.classList.remove("is__active");
+              mainMenuNav.classList.remove("is__active");
             }
           }
 
           for (const [index, megaMenu] of sub__menu__main.entries()) {
-            if (index == elemIndex && !megaMenu.classList.contains("is__active")
-            ) {
+            if (index == elemIndex && !megaMenu.classList.contains("is__active")) {
               megaMenu.classList.add("is__active");
+              mainMenuNav.classList.add("is__active");
             } else {
               megaMenu.classList.remove("is__active");
             }
@@ -212,19 +250,15 @@ var navigationDesktop = {
       for (const [levelTwoIndex, levelTwo] of openLeveltwo.entries()) {
         levelTwo.querySelector("button").addEventListener("click", function () {
           for (const [levelTwoIndexItem, levelTwoItem] of document
-            .querySelectorAll(".sub__menu__level_two")
-            .entries()) {
-            if (
-              levelTwoIndexItem == levelTwoIndex &&
-              !levelTwoItem.classList.contains("is__active")
-            ) {
+            .querySelectorAll(".sub__menu__level_two").entries()) {
+            if (levelTwoIndexItem == levelTwoIndex && !levelTwoItem.classList.contains("is__active")) {
               levelTwoItem.classList.add("is__active");
             } else {
               levelTwoItem.classList.remove("is__active");
-              for (const [levelThreeIndexItem, levelThreeItem] of document
-                .querySelectorAll(".sub__menu__level_three")
-                .entries()) {
+
+              for (const [levelThreeIndexItem, levelThreeItem] of document.querySelectorAll(".sub__menu__level_three").entries()) {
                 levelThreeItem.classList.remove("is__active");
+
               }
             }
           }
@@ -254,6 +288,8 @@ var navigationDesktop = {
         closeButton.addEventListener("click", function () {
           closeButton.classList.toggle("is__active");
           if (closeButton.className.includes("is__active")) {
+            mainMenuNav.classList.remove("is__active");
+
             closeButton
               .closest(".sub__menu__main")
               .classList.remove("is__active");
@@ -270,6 +306,8 @@ var navigationDesktop = {
         closeButton.addEventListener("click", function () {
           closeButton.classList.toggle("is__active");
           if (closeButton.className.includes("is__active")) {
+            mainMenuNav.classList.remove("is__active");
+
             closeButton
               .closest(".sub__menu__main")
               .classList.remove("is__active");
@@ -280,20 +318,23 @@ var navigationDesktop = {
           }
         });
       }
+      closeSearch.addEventListener("click", function () {
+        document.querySelector(".search__navigation").classList.toggle("is-open");
+        search.classList.toggle("is-open");
 
+      });
       // search button
       search.addEventListener("click", function () {
         search.classList.toggle("is-open");
-        document
-          .querySelector(".search__navigation")
-          .classList.toggle("is-open");
+        document.querySelector(".search__navigation").classList.toggle("is-open");
         if (search.className.includes("is-open")) {
-          document
-            .querySelector(".sub__menu__main")
-            .classList.remove("is__active");
-          document
-            .querySelector(".main__menu__item__holder")
-            .classList.remove("is__active");
+          mainMenuNav.classList.remove("is__active");
+
+          document.querySelectorAll(".sub__menu__main.is__active").forEach(menu => {
+            menu.classList.remove("is__active");
+          })
+          document.querySelectorAll(".main__menu__item__holder.is__active").forEach(menu => {
+            menu.classList.remove("is__active");})
         }
       });
     }

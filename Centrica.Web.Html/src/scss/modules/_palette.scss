@@ -16,11 +16,62 @@ $azure: #e7ffff;
 $success: #21a498;
 $error: #d10000;
 $beige:#FFFAE7;
+$golden:#ffea9a;
+$tranquil:#E7ffff;
+$early_dawn:#fffae7;
+$hint_of_green:#e9ffe7;
 
+.bg_colour_hint_of_green, .bg_colour_early_dawn, .bg_colour_golden, .bg_colour_tranquil{
+  blockquote.text-blockquote{
+    background: transparent;
+  }
+}
 
-.bg__beige::before {
+.bg_colour_hint_of_green::before {
+  content: "";
+  background: $hint_of_green;
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  right: 50%;
+  margin-right: -50vw;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+}
+
+.bg_colour_early_dawn::before {
+  content: "";
+  background: $early_dawn;
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  right: 50%;
+  margin-right: -50vw;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+}
+
+.bg_colour_golden::before {
+  content: "";
+  background: $golden;
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  right: 50%;
+  margin-right: -50vw;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+}
+
+.bg_colour_tranquil::before {
     content: "";
-    background: $beige;
+    background: $tranquil;
     position: absolute;
     width: 100vw;
     left: 50%;
@@ -46,15 +97,17 @@ $beige:#FFFAE7;
   background: linear-gradient(120.74deg, #E7FFFF 0%, rgba(231, 255, 255, 0) 100%);
 }
 
-  .bg__colour{
-     padding-left: calc((100vw - 1600px)/ 2);
-     padding-right: calc((100vw - 1600px)/ 2);
-     width: 100vw;
-     position: relative;
-     left: 50%;
-     margin-left: -50vw;
-     right: 50%;
-     margin-right: -50vw;   
+.bg__colour{
+    content: "";
+    position: absolute;
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    right: 50%;
+    margin-right: -50vw;
+    height: 100%;
+    z-index: -1;
+    top: 0;  
   }
 
 //Primary Colours 2019 build

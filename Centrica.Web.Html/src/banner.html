@@ -25,12 +25,12 @@
     <header class="main__navigation container__main xl-grid" role="banner">
         <nav class="row no-gutters">
           <a class="Header_logo_Centrica" title="Home" tabindex="0" href="/">
-            <!-- <img src="./image/centrica-main-logo.svg" alt="Centrica" width="150" height="30"> -->
+            <img src="./image/centrica-main-logo.svg" alt="Centrica" width="150" height="30">
           </a>
            <!-- Desktop menu -->
           <ul class="main__menu">
             <li class="main__menu__item">
-              <button class="main__menu__item__holder">About</button>
+              <button class="main__menu__item__holder main__menu__item__holder__nested">About</button>
               <div class="sub__menu__main col-lg-12">
                 <div class="sub__menu__inner">
                   <div class="sub__menu__inner__wrapper col-lg-12">
@@ -41,7 +41,7 @@
                       <div class="divv no-gutters">    
                     <ul class="sub__menu__level_one">
                       <h2 class="h5_heading bottom__line">About</h2>
-                      <li class="holder_page"><a href="">About overview</a></li>
+                      <li class="holder_page"><a href="/src/header_footer.html">About overview</a></li>
                       <!-- if li has class "has_sub_menu_level_two" use button with span if not a href -->
                       <li class="has_sub_menu_level_two"><button>About test 1 goes to level 2 <span></span></button>   
                         <ul class="sub__menu__level_two">
@@ -146,7 +146,7 @@
                     <div class="row__main no-gutters flex__end">
                       <div class="col-lg-5">
                         <div class="image__main menu">
-                          <!-- <img src="./image/centrica--image.jpg" alt="dfsfs" class="fit-cover"> -->
+                          <img src="./image/centrica--image.jpg" alt="dfsfs" class="fit-cover">
                         </div>
                         <div class="rte__main">
                           <h3 class="h4__heading">Our strategy</h3>
@@ -157,7 +157,7 @@
                       </div>
                       <div class="col-lg-5">
                         <div class="image__main menu">
-                          <!-- <img src="./image/centrica--image.jpg" alt="dfsfs" class="fit-cover"> -->
+                          <img src="./image/centrica--image.jpg" alt="dfsfs" class="fit-cover">
                         </div>
                         <div class="rte__main">
                           <h3 class="h4__heading">Our strategy</h3>
@@ -177,7 +177,7 @@
             </li>
 
             <li class="main__menu__item">
-              <button class="main__menu__item__holder">Our Business</button>
+              <button class="main__menu__item__holder main__menu__item__holder__nested">Our Business</button>
                 <!-- Business -->
                 <div class="sub__menu__main col-lg-12">
                   <div class="sub__menu__inner">
@@ -189,7 +189,7 @@
                         <div class="divv no-gutters">    
                       <ul class="sub__menu__level_one">
                         <h2 class="h5_heading bottom__line">Business</h2>
-                        <li class="holder_page"><a href="">Business overview</a></li>
+                        <li class="holder_page"><a href="/src/banner.html">Business overview</a></li>
                         <!-- if li has class "has_sub_menu_level_two" use button with span  if not a href -->
                         <li class="has_sub_menu_level_two"><button>Business test 1 goes to level 2 <span></span></button>   
                           <ul class="sub__menu__level_two">
@@ -326,10 +326,10 @@
                 </div>
             </li> 
             <li class="main__menu__item">
-              <a href="/src/banner.html" class="main__menu__item__holder">Investors</button>
+              <a href="/src/results_presentation.html" class="main__menu__item__holder ">Investors</button>
             </li>    
             <li class="main__menu__item">
-              <button class="main__menu__item__holder">Sustainability</button>
+              <button class="main__menu__item__holder main__menu__item__holder__nested">Sustainability</button>
                 <!-- Sustainability -->
                 <div class="sub__menu__main col-lg-12">
                   <div class="sub__menu__inner">
@@ -696,17 +696,17 @@
                 </form>
                    
             </div>
+            <span class="close__search_2023"></span>
+
         </div>
     </header>
   
     <main role="main">
-      <!-- bvanner Section -->
-      <section class="container__main xl-grid -mt-8 banner__wrapper__2023">
+      <!-- banner Section eg with video -->
+      <section class="container__main xl-grid -mt-0 banner__wrapper__2023">
         <div class="row__main">
 
           <div class="col-lg-6">
-
-
             <!-- <div class="inner__content__banner__layout__1">
               <h1>About</h1>
               <h2>Putting <br> customers and colleagues at the heart of our business</h2>
@@ -716,19 +716,92 @@
               <h1>About</h1>
               <!-- allow br tag -->
               <h2>Putting <br> customers and colleagues at the heart of our business</h2>
+              <!--IF use link picker -->
+              <button class="button__primary__main">
+                <a href="">button__primary__main</a>
+              </button>
+              <!--ELSE use rte for links -->
+              <div class="rte__main">
+                <p><a href="" class="internal__link ">View presentation</a></p>
+              </div>
+
             </div>
-
-
           </div>
+
           <div class="col-lg-6">
-            <div class="image__main banner-xl">
+            <!-- IF VIDEO true use -->
+            <!-- Video Must be a MP4 and needs to uploaded into the CMS -->
+            <div class="video-wrapper-2023">
+              <div class="video-container">
+                  <video src="/src/image/small.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="" id="video"></video>
+                    <!--IF !NULL url for youTube/vimeo -->
+                    <a href="https://www.youtube.com/watch?v=5UGT-GYT-nc" data-fancybox="" class="video__play">video</a>
+                </div>
+            </div> 
+
+            <!-- ELSE use -->
+            <!-- <div class="image__main banner-xl">
               <img src="/src/image/centrica--image.jpg" alt="fdcfd" class="fit-cover">
-            </div>
+              <a href="https://www.youtube.com/watch?v=5UGT-GYT-nc" data-fancybox="" class="video__play">video</a>
+            </div> -->
+
           </div>
 
         </div>
       </section>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- bvanner Section with image -->
+      <section class="container__main xl-grid -mt-0 banner__wrapper__2023">
+        <div class="row__main">
 
+          <div class="col-lg-6">
+            <!-- <div class="inner__content__banner__layout__1">
+              <h1>About</h1>
+              <h2>Putting <br> customers and colleagues at the heart of our business</h2>
+            </div> -->
+            
+            <div class="inner__content__banner__layout__2">
+              <h1>About</h1>
+              <!-- allow br tag -->
+              <h2>Putting <br> customers and colleagues at the heart of our business</h2>
+              <!--IF use link picker -->
+              <button class="button__primary__main">
+                <a href="">button__primary__main</a>
+              </button>
+              <!--ELSE use rte for links -->
+              <div class="rte__main">
+                <p><a href="" class="internal__link ">View presentation</a></p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- IF VIDEO true use -->
+            <!-- Video Must be a MP4 and needs to uploaded into the CMS -->
+            <!--IF !NULL LINK url for youTube/vimeo -->
+            <!-- <div class="video-wrapper-2023">
+              <div class="video-container">
+                  <video src="/src/image/small.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="" id="video"></video>
+                    <a href="https://www.youtube.com/watch?v=5UGT-GYT-nc" data-fancybox="" class="video__play">video</a>
+                </div>
+            </div>  -->
+
+            <!-- ELSE use -->
+            <div class="image__main banner-xl">
+              <img src="/src/image/centrica--image.jpg" alt="fdcfd" class="fit-cover">
+              <a href="https://www.youtube.com/watch?v=5UGT-GYT-nc" data-fancybox="" class="video__play">video</a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
       <!-- link list -->
       <section class="container__main xl-grid -mt-8">
         <div class="row__main">
@@ -758,17 +831,213 @@
         </div>
       </section>
   
+      <section class="container__main xl-grid -mt-8">
+        <div class="row__main">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-9">  
+            <div class="accordions_wrapper_2023">
+              <div class="close_all_accordion_2023">
+                <p></p>
+              </div>
+              <!-- loop me -->
+              <!-- first accordion must be open add class "accordion__active"-->
+              <div class="accordion_2023 open_close_one_by_one">
+                <div class="accordion__intro">
+                  <div class="plus"></div>
+                  <time>01 Dec 2022</time>
+                  <h2 class="h4__heading">Energy Marketing & Trading teach-in</h2>
+                </div>
+                <div class="accordion__content result__presentation_2023">
+                    <!-- header row -->
+                    <div class="row__main header__row">
+                      <div class="col-lg-4"></div>
+                      <div class="col-lg-4">
+                        <h3>View online</h3>
+                      </div>
+                      <div class="col-lg-4">
+                        <h3>Download</h3>
+                      </div>
+                    </div>
+                    <!-- header row end -->
+
+                    <div class="row__main -mt-3">
+                      <div class="col-lg-4">
+                        <h4>Presentation</h4>
+                      </div>
+                      <div class="col-lg-4">
+                        <p><a href="" class="internal__link ">View presentation</a></p>
+                      </div>
+                      <div class="col-lg-4">
+                        <p><a href="" class="download__link">Download PDF</a> <span class="file__size">(PDF – 1MB)</span></p>
+
+                      </div>
+                    </div>
+
+                    <div class="row__main">
+                      <div class="col-lg-4">
+                        <h4>Webcast</h4>
+                      </div>
+                      <div class="col-lg-4">
+
+                      </div>
+                      <div class="col-lg-4">
+
+                      </div>
+                    </div>
+
+                    <div class="row__main">
+                      <div class="col-lg-4">
+                        <h4>Transcript</h4>
+                      </div>
+                      <div class="col-lg-4">
+
+                      </div>
+                      <div class="col-lg-4">
+
+                      </div>
+                    </div>
+                    <div class="row__main">
+                      <div class="col-lg-4">
+                        <h4>Investor And Analyst Call - Transcript</h4>
+                      </div>
+                      <div class="col-lg-4">
+                        <p><a href="" class="internal__link">View presentation</a></p>
+
+                      </div>
+                      <div class="col-lg-4">
+                        <p><a href="" class="download__link">Download PDF</a> <span class="file__size">(PDF – 1MB)</span></p>
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <!-- loop end -->
+
+              <div class="accordion_2023 open_close_one_by_one">
+              
+                <div class="accordion__intro">
+                  <div class="plus"></div>
+                  <time>01 Dec 2022</time>
+                  <h2 class="h4__heading">Energy Marketing & Trading teach-in</h2>
+                </div>
+                <div class="accordion__content rte__main">
+                  <div class="row__main">
+                    <div class="row__main col-lg-9">  
+                        <div class="col-lg-5">
+                        <div class="rte__main">
+                          <h2>As an energy services and solutions company, we put customers and colleagues at the heart of everything we do, to add value for all.</h2>
+                          <p>Through our trusted brands, we deliver innovative energy and services solutions to help solve customers’ needs, supported by around 7,000 engineers and technicians. We are committed to creating a cleaner and greener future.</p>
+                          <p><a href="#" class="internal__link">Our Strategy</a></p>
+                        </div>
+            
+                        </div>    
+                        <div class="col-lg-3">
+                          <div class="image__main image_colspan_3 -mb-3">
+                            <img src="./image/centrica--image.jpg" alt="dfsfs" class="fit-cover">
+                          </div>      
+                        </div>    
+                     </div>
+                  </div>   
+                </div>
+              </div>
+
+
+              <div class="accordion_2023 open_close_one_by_one">
+                <div class="accordion__intro">
+                  <div class="plus"></div>
+                  <time>01 Dec 2022</time>
+                  <h2 class="h4__heading">Energy Marketing & Trading teach-in</h2>
+                </div>
+                <div class="accordion__content ">
+                <!-- link list -->
+              <div class="row__main">
+                <div class="col-lg-12">
+                    <div class="link__list__2023">
+
+                      <div class="rte__main">
+                        <!-- up to you if u want to use the rte here -->
+                        <time>24 February 2022</time>
+                        <h2 class="h2_dash_bottom __large">2021 Preliminary Results</h2>
+                      </div>
+
+                      <ul>
+                        <li><a href="" class="download__link">2021 Preliminary Results announcement</a><span class="file__size">(PDF – 1MB)</span></li>
+                        <li><a href="" class="download__link">2021 Preliminary Results announcement</a><span class="file__size">(PDF – 1MB)</span></li>
+                        <li><a href="" class="download__link">2021 Preliminary Results announcement</a><span class="file__size">(PDF – 1MB)</span></li>
+                        <li><a href="" class="download__link">2021 Preliminary Results announcement</a><span class="file__size">(PDF – 1MB)</span></li>
+                      </ul>
+                      <!-- set this as a link picker -->
+                      <button class="button__primary__main">
+                        <a href="" class="download__link">button__primary__main (ZIP - 4MB)</a> 
+                      </button>
+
+                    </div>
+                </div>
+              </div>
+  
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-9">
+              <div class="link__list__2023">
+
+                <div class="rte__main">
+                  <!-- up to you if u want to use the rte here -->
+                  <time>24 February 2022</time>
+                  <h2 class="h2_dash_bottom __large">2021 Preliminary Results</h2>
+                </div>
+
+                <ul>
+                  <li><a href="" class="download__link">2021 Preliminary Results announcement</a><span class="file__size">(PDF – 1MB)</span></li>
+                  <li><a href="" class="download__link">2021 Preliminary Results announcement</a><span class="file__size">(PDF – 1MB)</span></li>
+                  <li><a href="" class="download__link">2021 Preliminary Results announcement</a><span class="file__size">(PDF – 1MB)</span></li>
+                  <li><a href="" class="download__link">2021 Preliminary Results announcement</a><span class="file__size">(PDF – 1MB)</span></li>
+                </ul>
+                <!-- set this as a link picker -->
+                <button class="button__primary__main">
+                  <a href="" class="download__link">button__primary__main (ZIP - 4MB)</a> 
+                </button>
+
+              </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="container__main xl-grid -pb-8 -pt-8 ">
+        <span class="bg__colour" style="background-color:#fffae7;"></span>
+        <div class="row__main">
+            <div class="col-lg-12">
+              <div class="rte__main">
+                <h2>As an energy services and solutions company, we put customers and colleagues at the heart of everything we do, to add value for all.</h2>
+                <p>BODY. Phasellus laoreet pharetra sagittis. Etiam condimentum leo id augue accumsan dapibus. Donec imperdiet, felis et facilisis viverra, lorem&nbsp;<a>link inside a rte</a>&nbsp;metus mattis dolor, eu aliquet lacus orci tempor libero. Or</p>
+                <p><a class="internal__link">Our Strategy</a></p>
+                <p><a class="external__link">Our Strategy</a></p>
+                <p><a class="download__link">Our Strategy</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
       <footer role="contentinfo">
         <section class="footer__wrapper container__main xl-grid -pt-8 pb-4">
           <div class="row">
             <div class="col-lg-2">
-              <!-- <img
+              <img
                 src="./image/centrica-main-logo.svg"
                 width="150"
                 height="30"
                 alt="Centrica Logo Footer"
                 class="-mb-2"
-              /> -->
+              />
             </div>
             <div class="col-lg-3 offset-lg-1">
               <h2 class="h4__heading">
